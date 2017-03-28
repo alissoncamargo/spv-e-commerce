@@ -45,8 +45,7 @@ class ProdutoController extends Controller {
         $produto = new Produto();
         $produto->create($request->all());
         \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
-        $models['produtos'] = Produto::all();
-            return view('admin.produto.listar');
+            return redirect()->action('ProdutoController@listar')->with('mensagens-sucesso', 'Cadastrado com Sucesso!');
         }
     
     function editar($id) {
@@ -60,7 +59,7 @@ class ProdutoController extends Controller {
         $data = $request->all();
 
         if(Produto::find($id)->update($data)){
-           return redirect()->action('admin.produto.listar')->with('mensagens-sucesso', 'Atualizado com Sucesso!');
+           return redirect()->action('ProdutoController@listar')->with('mensagens-sucesso', 'Atualizado com Sucesso!');
        } else {
            return redirect()->back()
            ->with('mensagens-erro', 'Erro!!!')

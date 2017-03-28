@@ -5,11 +5,7 @@
         <ul class="nav nav-justified">
             <li class="active"><a href="{{route('admin.dashboard')}}">Home</a></li>
             <li><a href="{{route('admin.pedidos')}}">Pedidos</a></li>
-            <li><a href="{{route('admin.categoria.listar')}}">Categorias</a>
-                <ul>
-                    <li><a href="{{route('admin.categoria.criar')}}">Nova</a></li>
-                </ul>
-            </li>
+            <li><a href="{{route('admin.categoria.listar')}}">Categorias</a></li>
             <li><a href="{{route('admin.marca.listar')}}">Marcas</a>
             <li><a href="{{route('admin.produto.listar')}}">Produtos</a>     
             @if (Auth::guest())
