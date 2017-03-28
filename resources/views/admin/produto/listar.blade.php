@@ -30,8 +30,8 @@
 		        <td>{{$prod->id}}</td>
 		        <td>{{$prod->nome}}</td>
 		        <td>{{$prod->qtde_estoque}}</td>
-		        <td>{{$prod->marca_id}}</td>
-		        <td>{{$prod->categoria_id}}</td>
+		        <td>{{$prod->marca->nome}}</td>
+		        <td>{{$prod->categoria->nome}}</td>
 		        
 		        <td>
 		            <a href="{{ url('admin/produto/'.$prod->id . '/editar') }}" class="btn btn-info btn-sm">
