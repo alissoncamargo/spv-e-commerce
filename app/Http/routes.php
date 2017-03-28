@@ -192,6 +192,34 @@ Route::group(['middleware' => ['auth']], function () {
         'as' => 'admin.produto.listar',
         'uses' => 'ProdutoController@listar'
     ]);
+    Route::get('admin/produto/{id?}/editar', [
+        'as' => 'admin.produto.editar',
+        'uses' => 'ProdutoController@editar'
+    ]);
+    Route::get('admin/produto/form', [
+        'as' => 'admin.produto.criar',    
+        'uses' => 'ProdutoController@criar'
+    ]);
+    Route::get('admin/produto/excluir', [
+        'as' => 'admin.produto.excluir',
+        'uses' => 'ProdutoController@excluir'
+    ]);
+    Route::post('admin/produto/listar', [
+        'as' => 'admin.produto.salvar',
+        'uses' => 'ProdutoController@salvar'
+    ]);
+    Route::patch('admin/produto/atualizar/{id}', [
+        'as' => 'admin.produto.atualizar',
+        'uses' => 'ProdutoController@atualizar'
+    ]);
+    Route::get('admin/produto/{id?}/excluir', [
+        'as' => 'admin.produto.excluir',
+        'uses' => 'ProdutoController@excluir'
+    ]);
+    Route::delete('admin/produto/{id?}/delete', [
+        'as' => 'admin.produto.delete',
+        'uses' => 'ProdutoController@delete'
+    ]);
 });
 
 
