@@ -13,18 +13,20 @@ class CategoriaController extends Controller {
     function getCategoria($id = null) {
         if ($id == null) {
             $models['listcategorias'] = Categoria::all();
-            dd($models['listcategorias']);
+            //dd($models['listcategorias']);
             return view('frente.categorias', $models);
         }
         
         // se um id foi passado
         $models['categoria'] = \Shoppvel\Models\Categoria::find($id);
-        dd($models['categoria']);
+        //dd($models['categoria']);
         return view('frente.produtos-categoria', $models);
     } 
 
     function listar() {
-            return view('admin.categoria.listar');
+        $models['listcategorias'] = Categoria::paginate(10);
+        //dd($models);
+            return view('admin.categoria.listar', $models);
         }
     
     function criar() {
@@ -36,7 +38,7 @@ class CategoriaController extends Controller {
     	$categoria = new Categoria();
     	$categoria->create($request->all());
         \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
-            return view('admin.categoria.listar');
+            return redirect()->action('CategoriaController@listar');
         }
     
     function editar($id) {
@@ -49,7 +51,7 @@ class CategoriaController extends Controller {
         $data = $request->all();
 
         if(Categoria::find($id)->update($data)){
-           return redirect()->action('CategoriaController@listar')->with('mensagens-sucesso', 'Atualizado com Sucesso!');
+           return redirect()->action('CategoriaController@listar')->with('mensagens-sucesso', 'Atualizado com Sucesso');
        } else {
            return redirect()->back()
            ->with('mensagens-erro', 'Erro!!!')

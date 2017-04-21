@@ -39,12 +39,12 @@
             
             <!-- Example row of columns -->
             <div class="row">
-                <div class="col-lg-2">
+                <div class="col-lg-2 ">
                     <h3>Categorias</h3>
-                    <ul>
+                    <ul class="list-group">
                         @foreach ($listcategorias as $cat)
                         @if (is_null($cat->categoria_id))
-                        <li>
+                        <li class="list-group-item">
                             <a href="{{route('categoria.listar', $cat->id)}}">
                                 {{$cat->nome}}
                             </a>

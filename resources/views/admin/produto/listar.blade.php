@@ -22,6 +22,7 @@
 		            <th>Marca</th>
 		            <th>Categoria</th>
 		            <th>Ações</th>
+		            <th></th>
 		        </tr>
 		    </thead>
 		    <tbody>
@@ -37,6 +38,8 @@
 		            <a href="{{ url('admin/produto/'.$prod->id . '/editar') }}" class="btn btn-info btn-sm">
 		                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> editar 
 		            </a>
+		        </td>
+		        <td>
 		            <a href="{{ url('admin/produto/'.$prod->id . '/excluir') }}" class="btn btn-danger btn-sm">
 		                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> excluir 
 		            </a>

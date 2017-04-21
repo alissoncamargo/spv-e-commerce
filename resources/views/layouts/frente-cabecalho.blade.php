@@ -1,5 +1,5 @@
 <div clas="row">
-    <h3 class="text-muted col-sm-2">Shoppvel</h3>
+    <h3 class="text-muted col-sm-2">Shoppvel- e comerce</h3>
     {!! Form::open(array('route' => 'produto.buscar', 'class'=>'navbar-form navbar-right')) !!} 
     <div class="form-group">
         {!! Form::text('termo-pesquisa', null,['placeholder'=>'Pesquisar',

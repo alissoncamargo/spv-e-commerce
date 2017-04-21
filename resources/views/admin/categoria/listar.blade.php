@@ -16,7 +16,7 @@
 		            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Nova Categoria 
 		        </a>
 		    </caption>
-		    		            <th>id</th>
+		    		<th>id</th>
 		            <th>Nome</th>
 		            <th>Categoria Principal</th>
 		            <th>Ações</th>
@@ -27,7 +27,13 @@
 		    <tr>
 		        <td>{{$cat->id}}</td>
 		        <td>{{$cat->nome}}</td>
-		        <td>{{is_null($cat->categoria_id) ? "" : $cat->pai->nome}}</td>
+		        <td>@if($cat->categoria_id != "")
+		         		{{$cat->pai->nome}}
+		         	@else
+		         		{{""}}
+		         	@endif
+
+		         </td>
 		        
 		        <td>
 		            <a href="{{ url('admin/categoria/'.$cat->id . '/editar') }}" class="btn btn-info btn-sm">
@@ -41,7 +47,7 @@
 		    @endforeach
 		    </tbody>
 		</table>
-
+			{{$listcategorias->links()}}
 	</div>
 </div>
 

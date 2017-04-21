@@ -31,7 +31,6 @@ class ProdutoController extends Controller {
     }
     function listar() {
         $models['produtos'] = Produto::paginate(20);
-
             return view('admin.produto.listar', $models);
         }
     

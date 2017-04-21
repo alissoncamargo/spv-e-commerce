@@ -7,9 +7,9 @@
     </h2>
 </div>
 <div class="col-sm-6 col-md-4">
-    <ul>
-        @foreach ($categorias as $cat)
-        <li>
+    <ul class="list-group">
+        @foreach ($listcategorias as $cat)
+        <li class="list-group-item">
             <a href="{{route('categoria.listar', $cat->id)}}">
                 {{$cat->nome}}
             </a>
