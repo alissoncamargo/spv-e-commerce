@@ -30,7 +30,7 @@ class ProdutoController extends Controller {
         return view('frente.resultado-busca', $models);
     }
     function listar() {
-        $models['produtos'] = Produto::paginate(20);
+        $models['produtos'] = Produto::orderBy('nome')->paginate(20);
             return view('admin.produto.listar', $models);
         }
     

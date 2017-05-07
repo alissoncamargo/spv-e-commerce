@@ -8,7 +8,7 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "laravelcollective/html": "5.2.*",
-        "michael/laravelpagseguro": "dev-master",
+        "michael/laravelpagseguro": "^1.0",
         "kennedytedesco/validation": "~3.0"
     },
     "require-dev": {

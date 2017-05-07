@@ -12,6 +12,7 @@
 	{!! Form::open(['method'=>'DELETE', 'url'=>'/admin/categoria/'.$categoria->id.'/delete', 'style'=>'display: inline;']) !!}
 	 	
 	 	<button type="submit" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> excluir</button>
+	 	<a href="{{Route('admin.categoria.listar')}}"><div class="btn btn-primary btn-sm glyphicon glyphicon-share-alt"> Cancelar </div></a>
 
 	{!! Form::close() !!}
 

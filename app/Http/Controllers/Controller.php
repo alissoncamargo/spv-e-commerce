@@ -15,7 +15,7 @@ class Controller extends BaseController {
         ValidatesRequests;
     
     public function __construct() {
-        $categorias = \Shoppvel\Models\Categoria::all();
+        $categorias = \Shoppvel\Models\Categoria::orderBy('nome')->get();
         	
         View::share ( 'listcategorias', $categorias );
     }

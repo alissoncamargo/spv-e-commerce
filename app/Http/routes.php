@@ -66,6 +66,11 @@ Route::any('carrinho/adicionar/{id}', [
     'uses' => 'CarrinhoController@anyAdicionar'
 ]);
 
+Route::any('carrinho/remover_item/{id}', [
+    'as' => 'carrinho.remover-item',
+    'uses' => 'CarrinhoController@remover_item'
+]);
+
 Route::get('carrinho', [
     'as' => 'carrinho.listar',
     'uses' => 'CarrinhoController@getListar'

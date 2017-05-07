@@ -11,7 +11,7 @@ class MarcaController extends Controller
 {
 
     function listar() {
-    	$models['marcas'] = Marca::all();
+    	$models['marcas'] = Marca::Orderby('nome')->paginate(10);
             return view('admin.marca.listar', $models);
         }
     

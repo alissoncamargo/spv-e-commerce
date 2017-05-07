@@ -12,7 +12,7 @@ class CategoriaController extends Controller {
 
     function getCategoria($id = null) {
         if ($id == null) {
-            $models['listcategorias'] = Categoria::all();
+            $models['listcategorias'] = Categoria::orderBy('nome')->get();
             //dd($models['listcategorias']);
             return view('frente.categorias', $models);
         }
@@ -24,7 +24,7 @@ class CategoriaController extends Controller {
     } 
 
     function listar() {
-        $models['listcategorias'] = Categoria::paginate(10);
+        $models['listcategorias'] = Categoria::Orderby('nome')->paginate(10);
         //dd($models);
             return view('admin.categoria.listar', $models);
         }

@@ -42,6 +42,9 @@
             <td class="text-right">
                 {{number_format($item->produto->preco_venda * $item->qtde, 2, ',', '.')}}
             </td>
+            <td> <a href="{{route('carrinho.remover-item', $item->produto->id)}}" 
+                    class="btn btn-danger btn-xs pull-right">Excluir item </a>                
+            </td>
         </tr>
         @endforeach
     </tbody>

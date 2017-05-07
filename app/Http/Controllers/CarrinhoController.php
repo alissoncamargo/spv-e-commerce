@@ -18,17 +18,22 @@ class CarrinhoController extends Controller {
     }
 
     function anyAdicionar(Request $request, $id) {
+        
+        $est = Produto::find($id)->qtde_estoque;
         if ($id == null) {
             return \Redirect::back()
                             ->withErrors('Nenhum código de produto informado para adicionar ao carrinho.');
         }
         // se um id foi passado e a adição ao carrinho está ok
-        if ($this->carrinho->add($id, $request->get('qtde'))) {
-            return redirect()->route('carrinho.listar')
-                            ->with('mensagens-sucesso', 'Produto adicionado ao carrinho');
+        if($request->get('qtde') <= Produto::find($id)->qtde_estoque){
+
+            if ($this->carrinho->add($id, $request->get('qtde'))) {
+                return redirect()->route('carrinho.listar')
+                                ->with('mensagens-sucesso', 'Produto adicionado ao carrinho');
+            }
         }
 
-        return \Redirect::back()->withErrors('Erro ao adicionar produto no carrinho');
+        return \Redirect::back()->withErrors('Erro ao adicionar produto no carrinho. Quantidade disponivel: '. $est);
     }
 
     function getListar() {
@@ -90,6 +95,11 @@ class CarrinhoController extends Controller {
             }
         }
         return $models;
+    }
+
+    function remover_item($id){
+        $this->carrinho->deleteItem($id);
+        return redirect()->route('carrinho.listar');
     }
 
     /**

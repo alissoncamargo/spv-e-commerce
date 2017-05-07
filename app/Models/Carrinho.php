@@ -54,6 +54,21 @@ class Carrinho {
         }
         return $total;
     }
+
+
+    public function deleteItem($id){
+        $itens_carrinho = $this->getItens();
+        foreach ($itens_carrinho as $i => $item) {
+            if($item->produto->id == $id){
+                unset($itens_carrinho[$i]);
+            } 
+        }
+
+        $this->esvaziar();
+        session([self::NOME_CARRINHO => $itens_carrinho]);
+        session()->save();
+        
+    }
     
     public function esvaziar() {
         session()->forget(self::NOME_CARRINHO);    
