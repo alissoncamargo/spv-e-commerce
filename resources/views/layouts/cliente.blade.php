@@ -41,33 +41,33 @@
             <div class="row">
                 <div class="col-lg-2">
                     <h3>Cliente</h3>
-                    <ul>
-                        <li>
+                    <ul class="list-group">
+                        <li class="list-group-item">
                             <a href="{{route('cliente.dashboard')}}">
                                 Painel de controle
                             </a>
                         </li>
-                        <li>
+                        <li class="list-group-item">
                             <a href="{{route('cliente.pedidos')}}">
                                 Todos os pedidos
                             </a>
                         </li>
-                        <li>
+                        <li class="list-group-item">
                             <a href="{{route('cliente.pedidos', '?status=nao-pagos')}}">
                                 Pedidos pendentes de pagamento
                             </a>
                         </li>
-                        <li>
+                        <li class="list-group-item">
                             <a href="{{route('cliente.pedidos', '?status=pagos')}}">
                                 Pedidos pagos
                             </a>
                         </li>
-                        <li>
+                        <li class="list-group-item">
                             <a href="{{route('cliente.pedidos', '?status=finalizados')}}">
                                 Pedidos finalizados
                             </a>
                         </li>
-                        <li>
+                        <li class="list-group-item">
                             <a href="{{route('cliente.perfil')}}">
                                 Perfil
                             </a>

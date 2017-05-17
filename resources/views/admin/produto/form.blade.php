@@ -15,7 +15,7 @@
 				<h3>Editar Produto {!! $produto->nome !!}</h3>
 				{!! Form::model($produto, ['method'=>'PATCH', 'url'=>'admin/produto/atualizar/'.$produto->id]) !!}
 			@else
-				{!! Form::open(['route' => 'admin.produto.salvar', 'class'=>'form-horizontal']) !!}
+				{!! Form::open(['route' => 'admin.produto.salvar', 'class'=>'form-horizontal', 'style'=>'display','files'=>true]) !!}
 			@endif
 
 			        {!! Form::label('categoria_id', 'Categoria', ['class'=>'col-sm-2 form-label']) !!}
@@ -42,15 +42,15 @@
 					{!! Form::label('avaliacao_total', 'Avaliação total', ['class'=>'col-sm-2 form-label']) !!}
 					{!! Form::input('number', 'avaliacao_total', null, ['class'=>'form-control', '', 'placeholder'=>'Avaliação total']) !!}
 
-					{!! Form::label('imagem_nome', 'Imagem', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('text', 'imagem_nome', null, ['class'=>'form-control', '', 'placeholder'=>'Nome da Imagem']) !!}
+					{!! Form::label('imagem', 'Selecione uma Imagem') !!}<br/>
+    				{!! Form::file('imagem') !!}
 
-					{!! Form::label('destacado', 'Destaque', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('checkbox', 'destacado', null, ['class'=>'form-control ']) !!}
+  					{!! Form::submit('Salvar', ['class'=>'btn btn-primary btn-sm']) !!}
 
-					{!! Form::submit('Salvar', ['class'=>'btn btn-primary input-group' ]) !!}
-
+					<a href="{{Route('admin.produto.listar')}}"><div class="btn btn-success btn-sm  glyphicon glyphicon-share-alt">Cancelar </div></a>
+					
 				{!! Form::close() !!}
+
 		</div>	
 	</div>
 </div>

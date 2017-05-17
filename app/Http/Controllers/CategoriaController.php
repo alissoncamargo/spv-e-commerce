@@ -54,14 +54,18 @@ class CategoriaController extends Controller {
            return redirect()->action('CategoriaController@listar')->with('mensagens-sucesso', 'Atualizado com Sucesso');
        } else {
            return redirect()->back()
-           ->with('mensagens-erro', 'Erro!!!')
+           ->with('mensagens-danger', 'Erro ao atualizar a categoria')
            ->withInput();
        }
 
    }
    function excluir($id) {
         $models['categoria'] = \Shoppvel\Models\Categoria::find($id);
+        if($id != -1){
             return view('admin.categoria.excluir', $models);
+        }
+            return redirect()->back()->with('mensagens-danger', 'Não é possível excluir, há um produto associado');
+            
         }
     
     function delete($id) {

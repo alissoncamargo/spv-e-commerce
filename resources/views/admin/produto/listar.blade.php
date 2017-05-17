@@ -17,10 +17,12 @@
 		        </a>
 		    </caption>
 		            <th>id</th>
+		            <th>Imagem</th>
 		            <th>Nome</th>
 		            <th>Quantidade</th>
 		            <th>Marca</th>
 		            <th>Categoria</th>
+		            <th>Preço Venda</th>
 		            <th>Ações</th>
 		            <th></th>
 		        </tr>
@@ -29,14 +31,16 @@
 		    @foreach($produtos as $prod)
 		    <tr>
 		        <td>{{$prod->id}}</td>
+		        <td>
+		        	<img src="{{route('imagem.file',$prod->imagem_nome)}}" alt="{{$prod->imagem_nome}}" style="width:100px;" > </td>
 		        <td>{{$prod->nome}}</td>
 		        <td>{{$prod->qtde_estoque}}</td>
 		        <td>{{$prod->marca->nome}}</td>
 		        <td>{{$prod->categoria->nome}}</td>
-		        
+		        <td>{{$prod->preco_venda}}</td>
 		        <td>
 		            <a href="{{ url('admin/produto/'.$prod->id . '/editar') }}" class="btn btn-info btn-sm">
-		                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> editar 
+		                <span class="glyphicon glyphicon-edit" aria-hidden="true" ></span> editar 
 		            </a>
 		        </td>
 		        <td>

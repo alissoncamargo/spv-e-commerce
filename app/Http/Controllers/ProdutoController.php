@@ -40,9 +40,13 @@ class ProdutoController extends Controller {
 
         }
     
-    function salvar(Request $request) {
+    function salvar(Request $request) { 
         $produto = new Produto();
+        //$produto->create($request->all());
+        //$request['imagem_nome'] = $this->setImagemFile($request['imagem']);
+        $request['imagem_nome'] = ImagemController::setImagemFile($request['imagem']);
         $produto->create($request->all());
+
         \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
             return redirect()->action('ProdutoController@listar')->with('mensagens-sucesso', 'Cadastrado com Sucesso!');
         }
