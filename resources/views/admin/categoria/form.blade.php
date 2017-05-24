@@ -24,8 +24,9 @@
 					{!! Form::label('nome', 'Categoria', ['class'=>'input-group']) !!}
 					{!! Form::input('text', 'nome', null, ['class'=>'form-control', 'autofocus', 'placeholder'=>'Nome']) !!}
 
-					{!! Form::submit('Salvar', ['class'=>'btn btn-primary input-group' ]) !!}
-					<a href="{{Route('admin.categoria.listar')}}"><div class="btn btn-success btn-sm glyphicon glyphicon-share-alt"> Cancelar </div></a>
+					{!! Form::submit('Salvar', ['class'=>'btn btn-primary', 'style'=>'margin-top:2px']) !!}
+
+					<a href="{{Route('admin.produto.listar')}}"><div class="btn btn-success  glyphicon glyphicon-share-alt">Cancelar </div></a>
 
 				{!! Form::close() !!}
 		</div>	

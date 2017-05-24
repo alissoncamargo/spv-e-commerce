@@ -125,4 +125,45 @@ class CarrinhoController extends Controller {
         return view('frente.finalizar-compra', $models);
     }
 
+    function calcFrete(Request $request){
+
+            $cep = $request->get('cep');
+            $cep_origem = "84072020";
+            $peso = 2.0;
+            $valor = 200;
+            $tipo_frete = 41106;
+            $altura = 6;
+            $largura = 20;
+            $comprimento = 20;
+
+            $url = "http://ws.correios.com.br/calculador/CalcPrecoPrazo.aspx?";
+            $url .="nCdEmpresa=";
+            $url .="&sDsSenha=";
+            $url .="&sCepOrigem=84072020";
+            $url .="&sCepDestino=" . $cep;
+            $url .="&nVlPeso=" . $peso;
+            $url .="&nVlLargura=" . $largura;
+            $url .="&nVlAltura=" . $altura;
+            $url .="&nCdFormato=1";
+            $url .="&nVlComprimento=" . $comprimento;
+            $url .="&sCdMaoPropria=n";
+            $url .="&nVlValorDeclarado=" . $valor;
+            $url .="&sCdAvisoRecebimento=n";
+            $url .="&nCdServico=" . $tipo_frete;
+            $url .="&nVlDiamentro=0";
+            $url .="&StrRetorno=xml";
+            
+            $xml = simplexml_load_file($url);
+
+            $models = $this->getCarrinhoModels();
+            $models['valorfrete'] = $xml->cServico->Valor;
+            $models['prazo'] = $xml->cServico->PrazoEntrega;
+            //dd($xml->cServico);
+
+            return view('frente.carrinho-listar', $models);
+            //return redirect()->route('carrinho.listar')->with($models);
+
+    }
+
+
 }

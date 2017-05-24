@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Shoppvel\Http\Requests;
 use Shoppvel\Models\Produto;
 use Shoppvel\Models\Marca;
+use Shoppvel\Http\Requests\ProdutoFormRequest;
+use Shoppvel\Http\Requests\ProdutoUpdateRequest;
 
 class ProdutoController extends Controller {
 
@@ -40,7 +42,7 @@ class ProdutoController extends Controller {
 
         }
     
-    function salvar(Request $request) { 
+    function salvar(ProdutoFormRequest $request) { 
         $produto = new Produto();
         //$produto->create($request->all());
         //$request['imagem_nome'] = $this->setImagemFile($request['imagem']);
@@ -57,7 +59,7 @@ class ProdutoController extends Controller {
             return view('admin.produto.form', $models);
         }
 
-    public function atualizar(Request $request, $id) {
+    public function atualizar(ProdutoUpdateRequest $request, $id) {
 
         $data = $request->all();
 

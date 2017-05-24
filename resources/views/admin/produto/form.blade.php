@@ -10,44 +10,46 @@
   		@if(Session::has('mensagem_sucesso'))
 			{!! mensagem_sucesso !!}
   		@endif
-		<div class="form-group">
+		<div class="">
 			@if(Request::is('*/editar'))
 				<h3>Editar Produto {!! $produto->nome !!}</h3>
 				{!! Form::model($produto, ['method'=>'PATCH', 'url'=>'admin/produto/atualizar/'.$produto->id]) !!}
 			@else
-				{!! Form::open(['route' => 'admin.produto.salvar', 'class'=>'form-horizontal', 'style'=>'display','files'=>true]) !!}
+				{!! Form::open(['route' => 'admin.produto.salvar', 'class'=>'', 'style'=>'','files'=>true]) !!}
 			@endif
-
 			        {!! Form::label('categoria_id', 'Categoria', ['class'=>'col-sm-2 form-label']) !!}
-			        {!! Form::select('categoria_id', $listcategorias->lists('nome','id'), null, ['class'=>'form-control', 'placeholder'=>'Categoria']) !!}
+			        {!! Form::select('categoria_id', $listcategorias->lists('nome','id'), null, ['class'=>'form-control col-sm-3', 'placeholder'=>'Categoria']) !!}
 
 			        {!! Form::label('marca_id', 'Marca', ['class'=>'col-sm-2 form-label']) !!}
-			        {!! Form::select('marca_id', $marcas->lists('nome','id'), null, ['class'=>'form-control', 'placeholder'=>'Marca']) !!}
-
+			        {!! Form::select('marca_id', $marcas->lists('nome','id'), null, ['class'=>'form-control col-sm-3', 'placeholder'=>'Marca']) !!}
+			    
 					{!! Form::label('nome', 'Produto', ['class'=>'col-sm-2 forml-label']) !!}
 					{!! Form::input('text', 'nome', null, ['class'=>'form-control', 'autofocus', 'placeholder'=>'Nome']) !!}
 
 					{!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-2 form-label']) !!}
 					{!! Form::input('textarea', 'descricao', null, ['class'=>'form-control', '', 'placeholder'=>'Descrição']) !!}
-
-					{!! Form::label('qtde_estoque', 'Quantidade', ['class'=>'col-sm-2 form-label']) !!}
+					
+					{!! Form::label('qtde_estoque', 'Quantidade', ['class'=>'col-sm-4 form-label']) !!}
 					{!! Form::input('number', 'qtde_estoque', null, ['class'=>'form-control', '', 'placeholder'=>'Quantidade']) !!}
 
-					{!! Form::label('preco_venda', 'Preço Venda', ['class'=>'col-sm-2 form-label']) !!}
+					{!! Form::label('preco_venda', 'Preço Venda', ['class'=>'col-sm-4 form-label']) !!}
 					{!! Form::input('text', 'preco_venda', null, ['class'=>'form-control', '', 'placeholder'=>'Preço de Venda']) !!}
-
-					{!! Form::label('avaliacao_qtde', 'Avaliação Quantidade', ['class'=>'col-sm-2 form-label']) !!}
+				
+					{!! Form::label('avaliacao_qtde', 'Avaliação Quantidade', ['class'=>'col-sm-6 form-label']) !!}
 					{!! Form::input('number', 'avaliacao_qtde', null, ['class'=>'form-control', '', 'placeholder'=>'Avaliação Quantidade']) !!}
-
-					{!! Form::label('avaliacao_total', 'Avaliação total', ['class'=>'col-sm-2 form-label']) !!}
+						
+					{!! Form::label('avaliacao_total', 'Avaliação total', ['class'=>'col-sm-6 form-label']) !!}
 					{!! Form::input('number', 'avaliacao_total', null, ['class'=>'form-control', '', 'placeholder'=>'Avaliação total']) !!}
+					
+				
+					{!! Form::label('imagem', 'Selecione uma Imagem', ['style'=>'margin-left:10px']) !!}<br/>
+    				{!! Form::file('imagem', ['class'=>'']) !!}
 
-					{!! Form::label('imagem', 'Selecione uma Imagem') !!}<br/>
-    				{!! Form::file('imagem') !!}
+  					{!! Form::submit('Salvar', ['class'=>'btn btn-primary', 'style'=>'margin-top:2px']) !!}
 
-  					{!! Form::submit('Salvar', ['class'=>'btn btn-primary btn-sm']) !!}
-
-					<a href="{{Route('admin.produto.listar')}}"><div class="btn btn-success btn-sm  glyphicon glyphicon-share-alt">Cancelar </div></a>
+					<a href="{{Route('admin.produto.listar')}}"><div class="btn btn-success  glyphicon glyphicon-share-alt">Cancelar </div></a>
+					</div>
+				</div>
 					
 				{!! Form::close() !!}
 

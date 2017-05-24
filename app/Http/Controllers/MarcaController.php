@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Shoppvel\Http\Requests;
 use Shoppvel\Models\Marca;
+use Shoppvel\Http\Requests\MarcaFormRequest;
 
 class MarcaController extends Controller
 {
@@ -20,7 +21,7 @@ class MarcaController extends Controller
 
         }
     
-    function salvar(Request $request) {
+    function salvar(MarcaFormRequest $request) {
     	$marca = new Marca();
     	$marca->create($request->all());
         \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');

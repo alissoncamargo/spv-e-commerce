@@ -86,6 +86,11 @@ Route::get('carrinho/esvaziar', [
     'uses' => 'CarrinhoController@getEsvaziar'
 ]);
 
+Route::post('carrinho/calcFrete', [
+    'as' => 'carrinho.calcFrete',
+    'uses' => 'CarrinhoController@calcFrete'
+]);
+
 Route::group(['middleware' => ['auth']], function () {
     Route::get('carrinho/finalizar-compra', [
         'as' => 'carrinho.finalizar-compra',
