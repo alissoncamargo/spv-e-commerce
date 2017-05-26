@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Shoppvel\Http\Requests;
 use Shoppvel\Models\Produto;
 use Shoppvel\Models\Marca;
+use Shoppvel\Controllers\ImagemController;
 
 class ProdutoController extends Controller {
 
@@ -42,6 +43,8 @@ class ProdutoController extends Controller {
     
     function salvar(Request $request) {
         $produto = new Produto();
+        //$imagem = \Shoppvel\Controllers\ImagemController::getImagemFile();
+        //$produto = $imagem;
         $produto->create($request->all());
         \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
             return redirect()->action('ProdutoController@listar')->with('mensagens-sucesso', 'Cadastrado com Sucesso!');

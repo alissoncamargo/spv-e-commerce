@@ -41,7 +41,8 @@
 		    @endforeach
 		    </tbody>
 		</table>
-
+		<!--Colocar os links para realizar o paginate -->
+		{{$marcas->links()}}
 	</div>
 </div>
 

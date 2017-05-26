@@ -26,7 +26,7 @@
 
         <tr>
             <td>
-                <img src="{{route('imagem.file',$item->produto->imagem_nome)}}" alt="{{$item->produto->imagem_nome}}" style="width:150px;" >
+                <img src="{{route('imagem.file',$item->produto->imagem_nome)}}" alt="{{$item->produto->imagem_nome}}" style="width:70px;" >
             </td>
             <td>
                 <a href="{{route('produto.detalhes', $item->produto->id)}}">

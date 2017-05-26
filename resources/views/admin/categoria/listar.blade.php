@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 
+
 @section('conteudo')
 
 <div class="panel panel-default ">
@@ -30,7 +31,7 @@
 		        <td>@if($cat->categoria_id != "")
 		         		{{$cat->pai->nome}}
 		         	@else
-		         		{{""}}
+		         		{{"Categoria Principal"}}
 		         	@endif
 
 		         </td>
@@ -39,9 +40,16 @@
 		            <a href="{{ url('admin/categoria/'.$cat->id . '/editar') }}" class="btn btn-info btn-sm">
 		                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> editar 
 		            </a>
-		            <a href="{{ url('admin/categoria/'.$cat->id . '/excluir') }}" class="btn btn-danger btn-sm">
-		                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> excluir 
-		            </a>
+			        
+			        @if(count($cat->produtos) > 0)
+						<a href="{{ url('admin/categoria/'.$cat->id = -1 . '/excluir') }}" class="btn btn-danger btn-sm">
+			                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> excluir 
+			            </a>
+			        @else
+			            <a href="{{ url('admin/categoria/'.$cat->id . '/excluir') }}" class="btn btn-danger btn-sm">
+			                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> excluir 
+			            </a>
+			        @endif
 		        </td>
 		    </tr>
 		    @endforeach

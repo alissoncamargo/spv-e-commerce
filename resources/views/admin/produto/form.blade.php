@@ -15,42 +15,38 @@
 				<h3>Editar Produto {!! $produto->nome !!}</h3>
 				{!! Form::model($produto, ['method'=>'PATCH', 'url'=>'admin/produto/atualizar/'.$produto->id]) !!}
 			@else
-				{!! Form::open(['route' => 'admin.produto.salvar', 'class'=>'form-horizontal']) !!}
+				{!! Form::open(['route' => 'admin.produto.salvar', 'class'=>'form-horizontal', 'style'=>'display']) !!}
 			@endif
 
 			        {!! Form::label('categoria_id', 'Categoria', ['class'=>'col-sm-2 form-label']) !!}
-			        {!! Form::select('categoria_id', $listcategorias->lists('nome','id'), null, ['class'=>'form-control', 'placeholder'=>'Categoria']) !!}
+			        {!! Form::select('categoria_id', $listcategorias->lists('nome','id'), null, ['class'=>'form-control', 'placeholder'=>'Categoria']) !!}<br>
 
 			        {!! Form::label('marca_id', 'Marca', ['class'=>'col-sm-2 form-label']) !!}
-			        {!! Form::select('marca_id', $marcas->lists('nome','id'), null, ['class'=>'form-control', 'placeholder'=>'Marca']) !!}
+			        {!! Form::select('marca_id', $marcas->lists('nome','id'), null, ['class'=>'form-control', 'placeholder'=>'Marca']) !!}<br>
 
 					{!! Form::label('nome', 'Produto', ['class'=>'col-sm-2 forml-label']) !!}
-					{!! Form::input('text', 'nome', null, ['class'=>'form-control', 'autofocus', 'placeholder'=>'Nome']) !!}
+					{!! Form::input('text', 'nome', null, ['class'=>'form-control', 'autofocus', 'placeholder'=>'Nome']) !!}<br>
 
 					{!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('textarea', 'descricao', null, ['class'=>'form-control', '', 'placeholder'=>'Descrição']) !!}
+					{!! Form::input('textarea', 'descricao', null, ['class'=>'form-control', '', 'placeholder'=>'Descrição']) !!}<br>
 
 					{!! Form::label('qtde_estoque', 'Quantidade', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('number', 'qtde_estoque', null, ['class'=>'form-control', '', 'placeholder'=>'Quantidade']) !!}
+					{!! Form::input('number', 'qtde_estoque', null, ['class'=>'form-control', '', 'placeholder'=>'Quantidade']) !!}<br>
 
 					{!! Form::label('preco_venda', 'Preço Venda', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('text', 'preco_venda', null, ['class'=>'form-control', '', 'placeholder'=>'Preço de Venda']) !!}
+					{!! Form::input('text', 'preco_venda', null, ['class'=>'form-control', '', 'placeholder'=>'Preço de Venda']) !!}<br>
 
-					{!! Form::label('avaliacao_qtde', 'Avaliação Quantidade', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('number', 'avaliacao_qtde', null, ['class'=>'form-control', '', 'placeholder'=>'Avaliação Quantidade']) !!}
+					<div class="col-md-12">{!! Form::label('imagem_nome', 'Imagem', ['class'=>'col-md-12 col-sm-2 form-label']) !!}</div>
+					{!! Form::input('file', 'imagem_nome', null, ['class'=>'col-md-12', '', 'placeholder'=>'Nome da Imagem']) !!}<br><br>
+					
+					<div class="col-md-12">
+					{!! Form::submit('Salvar', ['class'=>'btn btn-primary']) !!}
 
-					{!! Form::label('avaliacao_total', 'Avaliação total', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('number', 'avaliacao_total', null, ['class'=>'form-control', '', 'placeholder'=>'Avaliação total']) !!}
-
-					{!! Form::label('imagem_nome', 'Imagem', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('text', 'imagem_nome', null, ['class'=>'form-control', '', 'placeholder'=>'Nome da Imagem']) !!}
-
-					{!! Form::label('destacado', 'Destaque', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('checkbox', 'destacado', null, ['class'=>'form-control ']) !!}
-
-					{!! Form::submit('Salvar', ['class'=>'btn btn-primary input-group' ]) !!}
+						<a href="{{Route('admin.produto.listar')}}"><div class="btn btn-success btn-sm  glyphicon glyphicon-share-alt col-md-offset-1"> Cancelar</div></a>
+					</div>
 
 				{!! Form::close() !!}
+
 		</div>	
 	</div>
 </div>

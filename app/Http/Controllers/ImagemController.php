@@ -10,7 +10,7 @@ class ImagemController extends Controller {
 
     function getImagemFile($nome) {
         $imagem = Storage::disk('public')->get($nome);
-        return response($imagem,200)->header('Content-Type', 'image/jpeg');
+        return response($imagem,200)->header('Content-Type', 'image/jpeg'&&'imagem/png');
     }
 
 }

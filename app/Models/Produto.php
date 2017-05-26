@@ -10,14 +10,14 @@ class Produto extends Model {
 	protected $fillable = [
 		'nome',
         'descricao',
+        'avaliacao_qtde',
+        'avaliacao_total',
         'qtde_estoque',
         'preco_venda',
         'destacado',
     	'imagem_nome',
     	'categoria_id',
       	'marca_id',
-        'avaliacao_total',
-        'avaliacao_total'
 	];
 
     public function marca() {

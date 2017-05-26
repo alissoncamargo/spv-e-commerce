@@ -24,7 +24,11 @@
 					{!! Form::label('nome', 'Categoria', ['class'=>'input-group']) !!}
 					{!! Form::input('text', 'nome', null, ['class'=>'form-control', 'autofocus', 'placeholder'=>'Nome']) !!}
 
+					<div class="">
 					{!! Form::submit('Salvar', ['class'=>'btn btn-primary input-group' ]) !!}
+					
+					<a href="{{Route('admin.categoria.listar')}}"><div class="btn btn-success btn-sm glyphicon glyphicon-share-alt"> Cancelar </div></a>
+					</div>
 
 				{!! Form::close() !!}
 		</div>	
