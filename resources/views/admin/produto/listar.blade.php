@@ -30,16 +30,18 @@
 		            <th>Quantidade</th>
 		            <th>Marca</th>
 		            <th>Categoria</th>
-		            <th>Valor</th>
-		            <th>Editar</th>
-		            <th>Excluir</th>
+
+		            <th>Preço Venda</th>
+		            <th>Ações</th>
+		            <th></th>
 		        </tr>
 		    </thead>
 		    <tbody>
 		    @foreach($produtos as $prod)
 		    <tr>
 		        <td>{{$prod->id}}</td>
-		        <td><img src="{{route('imagem.file',$prod->imagem_nome)}}" width="100" height="100" alt="{{$prod->imagem_nome}}" ></td>
+		        <td>
+		        	<img src="{{route('imagem.file',$prod->imagem_nome)}}" alt="{{$prod->imagem_nome}}" style="width:100px;" > </td>
 		        <td>{{$prod->nome}}</td>
 		        <td>{{$prod->qtde_estoque}}</td>
 		        <td>{{$prod->marca->nome}}</td>

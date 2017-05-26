@@ -60,6 +60,26 @@
             </td>
         </tr>
         <tr>
+            {!! Form::open(['method'=>'POST', 'url' => 'carrinho/calcFrete' , 'class'=>'']) !!}
+            <td>
+                {!! Form::input('text', 'cep', null, ['class'=>'form-control', 'placeholder'=>'Digite o CEP']) !!}
+            </td>
+            <td>
+                {!! Form::submit('Calcular', ['class'=>'btn btn-primary input-group' ]) !!}
+            </td>
+            {!! Form::close() !!}
+            <td>
+            <div class="">
+                @if(isset($valorfrete))
+                    @if($itens->count()>0)
+                        Frete: Entrega em {{$prazo}}, valor R$ {{$valorfrete}}               
+                    @endif
+                @else
+                    {{'Frete'}}
+                @endif
+            </div>
+            </td>
+
             <td colspan="4" class="text-right">
                 Finalizar compra
             </td>

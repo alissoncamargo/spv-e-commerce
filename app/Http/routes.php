@@ -61,6 +61,11 @@ Route::get('imagem/arquivo/{nome}', [
     'uses' => 'ImagemController@getImagemFile'
 ]);
 
+Route::any('imagem/arquivo/{nome}', [
+    'as' => 'imagem.file',
+    'uses' => 'ImagemController@getImagemFile'
+]);
+
 Route::any('carrinho/adicionar/{id}', [
     'as' => 'carrinho.adicionar',
     'uses' => 'CarrinhoController@anyAdicionar'
@@ -84,6 +89,11 @@ Route::post('carrinho/avaliar', [
     'as' => 'carrinho.avaliar',
     'uses' => 'CarrinhoController@Avaliar'
 
+]);
+
+Route::post('carrinho/calcFrete', [
+    'as' => 'carrinho.calcFrete',
+    'uses' => 'CarrinhoController@calcFrete'
 ]);
 
 Route::group(['middleware' => ['auth']], function () {

@@ -7,6 +7,8 @@ use Shoppvel\Http\Requests;
 use Shoppvel\Models\Produto;
 use Shoppvel\Models\Marca;
 use Shoppvel\Controllers\ImagemController;
+use Shoppvel\Http\Requests\ProdutoFormRequest;
+use Shoppvel\Http\Requests\ProdutoUpdateRequest;
 
 class ProdutoController extends Controller {
 
@@ -41,11 +43,12 @@ class ProdutoController extends Controller {
 
         }
     
-    function salvar(Request $request) {
+    function salvar(ProdutoFormRequest $request) { 
         $produto = new Produto();
         //$imagem = \Shoppvel\Controllers\ImagemController::getImagemFile();
         //$produto = $imagem;
         $produto->create($request->all());
+
         \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
             return redirect()->action('ProdutoController@listar')->with('mensagens-sucesso', 'Cadastrado com Sucesso!');
         }
@@ -56,7 +59,7 @@ class ProdutoController extends Controller {
             return view('admin.produto.form', $models);
         }
 
-    public function atualizar(Request $request, $id) {
+    public function atualizar(ProdutoUpdateRequest $request, $id) {
 
         $data = $request->all();
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Shoppvel\Http\Requests;
 use Shoppvel\Models\Categoria;
 use Shoppvel\Http\Requests\CategoriaRequest;
+use Shoppvel\Http\Requests\CategoriaFormRequest;
 use Shoppvel\Http\Requests\CategoriaUpdateRequest;
 
 class CategoriaController extends Controller {
@@ -35,8 +36,9 @@ class CategoriaController extends Controller {
 
         }
     
-    function salvar(Request $request) {
+    function salvar(CategoriaFormRequest $request) {
     	$categoria = new Categoria();
+
     	$categoria->create($request->all());
         \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
             return redirect()->action('CategoriaController@listar');
