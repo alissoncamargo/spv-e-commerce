@@ -1,4 +1,4 @@
-## Laravel PagSeguro - 1.0.1
+## Laravel PagSeguro - 1.0.2
 
 [![Build Status](https://travis-ci.org/michaeldouglas/laravel-pagseguro.svg?branch=master)](https://travis-ci.org/michaeldouglas/laravel-pagseguro)
 [![Total Downloads](https://poser.pugx.org/michael/laravelpagseguro/downloads)](https://packagist.org/packages/michael/laravelpagseguro)
@@ -162,7 +162,9 @@ $checkout = PagSeguro::checkout()->createFromArray($data);
 Para confirmar o envio utilize o método: `send` da seguinte forma:
 
 ```php
-$information = $request->send($credentials); // Retorna um objeto de laravel\pagseguro\Checkout\Information\Information
+$checkout = PagSeguro::checkout()->createFromArray($data);
+$credentials = PagSeguro::credentials()->get();
+$information = $checkout->send($credentials); // Retorna um objeto de laravel\pagseguro\Checkout\Information\Information
 if ($information) {
     print_r($information->getCode());
     print_r($information->getDate());

@@ -7,8 +7,8 @@ return [
      * Coloque abaixo as informações do seu cadastro no PagSeguro
      */
     'credentials' => [//INFORME AS CREDENCIAIS PADRÕES DE SUA LOJA, MAS PORDERÁ SER ALTERADA EM RUNTIME
-        'email' => env('PAGSEG_EMAIL', 'ali_r_c@msn.com'),
-        'token' => env('PAGSEG_TOKEN', '7BCB52255BAB44718D17C0738336F70B'),
+        'email' => env('PAGSEG_EMAIL', 'diegomartins5001@gmail.com'),
+        'token' => env('PAGSEG_TOKEN', '27B98C09A13E4C029B2F8390143540A1'),
     ],
     /*
      * Informe abaixo o nome / url das rotas de aplicação para notificações

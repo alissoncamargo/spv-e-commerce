@@ -31,7 +31,7 @@
 		        <td>@if($cat->categoria_id != "")
 		         		{{$cat->pai->nome}}
 		         	@else
-		         		{{""}}
+		         		{{"Categoria Principal"}}
 		         	@endif
 
 		         </td>

@@ -12,7 +12,8 @@ class MarcaController extends Controller
 {
 
     function listar() {
-    	$models['marcas'] = Marca::Orderby('nome')->paginate(10);
+    	$models['marcas'] = Marca::paginate(10);
+      //$models['marcas'] = Marca::paginate(10);
             return view('admin.marca.listar', $models);
         }
     
@@ -24,7 +25,7 @@ class MarcaController extends Controller
     function salvar(MarcaFormRequest $request) {
     	$marca = new Marca();
     	$marca->create($request->all());
-        \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
+        //\Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
         $models['marcas'] = Marca::all();
             return view('admin.marca.listar', $models);
         }

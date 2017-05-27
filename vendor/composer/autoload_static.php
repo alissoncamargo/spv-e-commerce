@@ -79,6 +79,10 @@ class ComposerStaticInit63df7b0b702aac29f1632b90944fd2fa
         array (
             'Illuminate\\' => 11,
         ),
+        'G' => 
+        array (
+            'Ghanem\\Rating\\' => 14,
+        ),
         'F' => 
         array (
             'Faker\\' => 6,
@@ -216,6 +220,10 @@ class ComposerStaticInit63df7b0b702aac29f1632b90944fd2fa
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate',
         ),
+        'Ghanem\\Rating\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ghanem/rating/src',
+        ),
         'Faker\\' => 
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
@@ -320,6 +328,7 @@ class ComposerStaticInit63df7b0b702aac29f1632b90944fd2fa
         'CreateMarcasTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_14_003346_create_marcas_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateProdutoTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_15_002500_create_produto_table.php',
+        'CreateRatingsTable' => __DIR__ . '/../..' . '/database/migrations/2017_05_21_130645_create_ratings_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_000000_create_users_table.php',
         'CreateVendasTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_01_212758_create_vendas_table.php',
         'Cron\\AbstractField' => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron/AbstractField.php',
@@ -750,6 +759,9 @@ class ComposerStaticInit63df7b0b702aac29f1632b90944fd2fa
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
+        'Ghanem\\Rating\\Commands\\MigrationCommand' => __DIR__ . '/..' . '/ghanem/rating/src/Commands/MigrationCommand.php',
+        'Ghanem\\Rating\\Models\\Rating' => __DIR__ . '/..' . '/ghanem/rating/src/Models/Rating.php',
+        'Ghanem\\Rating\\Traits\\Ratingable' => __DIR__ . '/..' . '/ghanem/rating/src/Traits/Ratingable.php',
         'Hamcrest\\Arrays\\IsArray' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArray.php',
         'Hamcrest\\Arrays\\IsArrayContaining' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContaining.php',
         'Hamcrest\\Arrays\\IsArrayContainingInAnyOrder' => __DIR__ . '/..' . '/hamcrest/hamcrest-php/hamcrest/Hamcrest/Arrays/IsArrayContainingInAnyOrder.php',

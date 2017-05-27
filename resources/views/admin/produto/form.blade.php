@@ -18,28 +18,23 @@
 				{!! Form::open(['route' => 'admin.produto.salvar', 'class'=>'', 'style'=>'','files'=>true]) !!}
 			@endif
 			        {!! Form::label('categoria_id', 'Categoria', ['class'=>'col-sm-2 form-label']) !!}
+
 			        {!! Form::select('categoria_id', $listcategorias->lists('nome','id'), null, ['class'=>'form-control col-sm-3', 'placeholder'=>'Categoria']) !!}
 
 			        {!! Form::label('marca_id', 'Marca', ['class'=>'col-sm-2 form-label']) !!}
 			        {!! Form::select('marca_id', $marcas->lists('nome','id'), null, ['class'=>'form-control col-sm-3', 'placeholder'=>'Marca']) !!}
 			    
 					{!! Form::label('nome', 'Produto', ['class'=>'col-sm-2 forml-label']) !!}
-					{!! Form::input('text', 'nome', null, ['class'=>'form-control', 'autofocus', 'placeholder'=>'Nome']) !!}
+					{!! Form::input('text', 'nome', null, ['class'=>'form-control', 'autofocus', 'placeholder'=>'Nome']) !!}<br>
 
 					{!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('textarea', 'descricao', null, ['class'=>'form-control', '', 'placeholder'=>'Descrição']) !!}
-					
-					{!! Form::label('qtde_estoque', 'Quantidade', ['class'=>'col-sm-4 form-label']) !!}
-					{!! Form::input('number', 'qtde_estoque', null, ['class'=>'form-control', '', 'placeholder'=>'Quantidade']) !!}
+					{!! Form::input('textarea', 'descricao', null, ['class'=>'form-control', '', 'placeholder'=>'Descrição']) !!}<br>
 
-					{!! Form::label('preco_venda', 'Preço Venda', ['class'=>'col-sm-4 form-label']) !!}
-					{!! Form::input('text', 'preco_venda', null, ['class'=>'form-control', '', 'placeholder'=>'Preço de Venda']) !!}
-				
-					{!! Form::label('avaliacao_qtde', 'Avaliação Quantidade', ['class'=>'col-sm-6 form-label']) !!}
-					{!! Form::input('number', 'avaliacao_qtde', null, ['class'=>'form-control', '', 'placeholder'=>'Avaliação Quantidade']) !!}
-						
-					{!! Form::label('avaliacao_total', 'Avaliação total', ['class'=>'col-sm-6 form-label']) !!}
-					{!! Form::input('number', 'avaliacao_total', null, ['class'=>'form-control', '', 'placeholder'=>'Avaliação total']) !!}
+					{!! Form::label('qtde_estoque', 'Quantidade', ['class'=>'col-sm-2 form-label']) !!}
+					{!! Form::input('number', 'qtde_estoque', null, ['class'=>'form-control', '', 'placeholder'=>'Quantidade']) !!}<br>
+
+					{!! Form::label('preco_venda', 'Preço Venda', ['class'=>'col-sm-2 form-label']) !!}
+					{!! Form::input('text', 'preco_venda', null, ['class'=>'form-control', '', 'placeholder'=>'Preço de Venda']) !!}<br>
 					
 				
 					{!! Form::label('imagem', 'Selecione uma Imagem', ['style'=>'margin-left:10px']) !!}<br/>

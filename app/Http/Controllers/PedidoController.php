@@ -10,6 +10,9 @@ use Shoppvel\Models\Produto;
 use Shoppvel\Models\Venda;
 use Shoppvel\Models\VendaItem ;
 use Illuminate\Support\Facades\Auth;
+use laravel\pagseguro\Config\Config;
+use laravel\pagseguro\Credentials\Credentials;
+use laravel\pagseguro\Checkout\Facade\CheckoutFacade;
 
 class PedidoController extends Controller {
 
@@ -32,6 +35,7 @@ class PedidoController extends Controller {
      */
     public function postCheckout(Request $req) {
         if ($req->has('transaction_id') === FALSE) {
+            //dd($req);
             return back()->withErrors('Problemas ao receber a chave de trasação do Pagseguro, '
                     . 'este pedido não foi gravado');
         }

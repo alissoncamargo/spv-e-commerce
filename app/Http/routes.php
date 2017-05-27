@@ -85,6 +85,11 @@ Route::get('carrinho/esvaziar', [
     'as' => 'carrinho.esvaziar',
     'uses' => 'CarrinhoController@getEsvaziar'
 ]);
+Route::post('carrinho/avaliar', [
+    'as' => 'carrinho.avaliar',
+    'uses' => 'CarrinhoController@Avaliar'
+
+]);
 
 Route::post('carrinho/calcFrete', [
     'as' => 'carrinho.calcFrete',

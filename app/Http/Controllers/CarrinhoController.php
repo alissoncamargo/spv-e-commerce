@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use Shoppvel\Http\Requests;
 use Shoppvel\Models\Carrinho;
 use Shoppvel\Models\Produto;
+//use Shoppvel\Controllers\ClienteController;
 use Illuminate\Support\Facades\Auth;
+use laravel\pagseguro\Config\Config;
+use laravel\pagseguro\Credentials\Credentials;
+use laravel\pagseguro\Checkout\Facade\CheckoutFacade;
 
 class CarrinhoController extends Controller {
 
@@ -90,7 +94,9 @@ class CarrinhoController extends Controller {
             $checkout = \PagSeguro::checkout()->createFromArray($dadosCompra);
             try {
                 $models['info'] = $checkout->send(\PagSeguro::credentials()->get());
+                //dd($models);
             } catch (\Exception $e) {
+                //dd($e);
                 $models = null;
             }
         }
@@ -109,7 +115,7 @@ class CarrinhoController extends Controller {
     private function getCarrinhoModels() {
         $models['itens'] = $this->carrinho->getItens();
         $models['total'] = $this->carrinho->getTotal();
-        if ($models['itens']->count() > 0) {
+        if ($models['itens']->count() > !1) {
             $models['pagseguro'] = $this->checkout();
         }
         return $models;
@@ -119,10 +125,31 @@ class CarrinhoController extends Controller {
         if ($this->carrinho->getItens()->count() == 0) {
             return back()->withErrors('Nenhum item no carrinho para finalizar compra!');
         }
-
         $models = $this->getCarrinhoModels();
+        //dd($models);
 
         return view('frente.finalizar-compra', $models);
+    }
+
+    public function Avaliar(Request $request){
+
+        $produto = Produto::findOrFail($request->get('id_produto'));
+        /*
+        $produto->avaliacao_qtde += $request->get('ava');
+        $produto->avaliacao_total++;
+        $produto->save();
+        return 'ok';*/
+        if($produto->avaliacao_qtde = Produto::find('avaliacao_qtde') == ''){
+            $produto->avaliacao_qtde += $request->get('ava');
+            $produto->avaliacao_total++;
+            $produto->avaliacao_qtde--;
+            $produto->save();
+        }else{
+            $produto->avaliacao_qtde += $request->get('ava');
+            $produto->avaliacao_qtde--;
+            $produto->avaliacao_total++;
+            $produto->update();
+        }
     }
 
     function calcFrete(Request $request){

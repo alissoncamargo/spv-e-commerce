@@ -138,8 +138,9 @@ return [
         Shoppvel\Providers\EventServiceProvider::class,
         Shoppvel\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        laravel\pagseguro\Platform\Laravel5\ServiceProvider::class,
         KennedyTedesco\Validation\ValidationServiceProvider::class,
+        laravel\pagseguro\Platform\Laravel5\ServiceProvider::class,
+        Ghanem\Rating\RatingServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------

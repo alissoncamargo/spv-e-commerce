@@ -14,7 +14,7 @@
             <h5 class="text-muted">categoria >> {{$produto->categoria->nome}}</h5>
         </div>
     </div>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-md-4 col-sm-6">
         @if ($produto->qtde_estoque > 0) 
             <h2 class="text-center text-info"> R$ {{number_format($produto->preco_venda, 2, ',', '.')}}</h2>
             <div class="col-sm-12 text-center">
@@ -34,7 +34,7 @@
         @if ($produto->avaliacao_qtde > 0) 
             Média de avaliações <br/>
             <h4 class="alert alert-success">
-                {{$produto->avaliacao_total / $produto->avaliacao_qtde}}
+                {{number_format($produto->avaliacao_total / $produto->avaliacao_qtde, 2, ',', '.')}}
             </h4>
         @else
             <span class="text-muted">Não avaliado</span>
