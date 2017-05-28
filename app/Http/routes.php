@@ -120,9 +120,7 @@ Route::group(['middleware' => ['auth']], function () {
         'uses' => 'ClienteController@postAvaliar'
     ]);
 
-   // if (Auth::guard('admin')->attempt($credentials)) {
-
-
+        
             Route::get('admin', [
                 'as' => 'admin',
                 'uses' => 'AdminController@getDashboard'
