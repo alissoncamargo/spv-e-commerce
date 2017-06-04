@@ -120,130 +120,127 @@ Route::group(['middleware' => ['auth']], function () {
         'uses' => 'ClienteController@postAvaliar'
     ]);
 
-   // if (Auth::guard('admin')->attempt($credentials)) {
-    //
-
-        Route::get('admin', [
-            'as' => 'admin',
-            'uses' => 'AdminController@getDashboard'
-        ]);
-        Route::get('admin/dashboard', [
-            'as' => 'admin.dashboard',
-            'uses' => 'AdminController@getDashboard'
-        ]);
-        Route::put('admin/pedido/pago/{id}', [
-            'as' => 'admin.pedido.pago',
-            'uses' => 'AdminController@putPedidoPago'
-        ]);
-        Route::put('admin/pedido/finalizado/{id}', [
-            'as' => 'admin.pedido.finalizado',
-            'uses' => 'AdminController@putPedidoFinalizado'
-        ]);
-        Route::get('admin/pedidos/{id?}', [
-            'as' => 'admin.pedidos',
-            'uses' => 'AdminController@getPedidos'
-        ]);
-        Route::get('admin/perfil', [
-            'as' => 'admin.perfil',
-            'uses' => 'AdminController@getPerfil'
-        ]);
-        Route::get('admin/categoria/listar', [
-            'as' => 'admin.categoria.listar',
-            'uses' => 'CategoriaController@listar'
-        ]);
-        Route::get('admin/categoria/{id?}/editar', [
-            'as' => 'admin.categoria.editar',
-            'uses' => 'CategoriaController@editar'
-        ]);
-        Route::get('admin/categoria/form', [
-            'as' => 'admin.categoria.criar',    
-            'uses' => 'CategoriaController@criar'
-        ]);
-        Route::get('admin/categoria/excluir', [
-            'as' => 'admin.categoria.excluir',
-            'uses' => 'CategoriaController@excluir'
-        ]);
-        Route::post('admin/categoria/listar', [
-            'as' => 'admin.categoria.salvar',
-            'uses' => 'CategoriaController@salvar'
-        ]);
-        Route::patch('admin/categoria/atualizar/{id}', [
-            'as' => 'admin.categoria.atualizar',
-            'uses' => 'CategoriaController@atualizar'
-        ]);
-        Route::get('admin/categoria/{id?}/excluir', [
-            'as' => 'admin.categoria.excluir',
-            'uses' => 'CategoriaController@excluir'
-        ]);
-        Route::delete('admin/categoria/{id?}/delete', [
-            'as' => 'admin.categoria.delete',
-            'uses' => 'CategoriaController@delete'
-        ]);
-        Route::get('admin/marca/listar', [
-            'as' => 'admin.marca.listar',
-            'uses' => 'MarcaController@listar'
-        ]);
-        Route::get('admin/marca/{id?}/editar', [
-            'as' => 'admin.marca.editar',
-            'uses' => 'MarcaController@editar'
-        ]);
-        Route::get('admin/marca/form', [
-            'as' => 'admin.marca.criar',    
-            'uses' => 'MarcaController@criar'
-        ]);
-        Route::get('admin/marca/excluir', [
-            'as' => 'admin.marca.excluir',
-            'uses' => 'MarcaController@excluir'
-        ]);
-        Route::post('admin/marca/listar', [
-            'as' => 'admin.marca.salvar',
-            'uses' => 'MarcaController@salvar'
-        ]);
-        Route::patch('admin/marca/atualizar/{id}', [
-            'as' => 'admin.marca.atualizar',
-            'uses' => 'MarcaController@atualizar'
-        ]);
-        Route::get('admin/marca/{id?}/excluir', [
-            'as' => 'admin.marca.excluir',
-            'uses' => 'MarcaController@excluir'
-        ]);
-        Route::delete('admin/marca/{id?}/delete', [
-            'as' => 'admin.marca.delete',
-            'uses' => 'MarcaController@delete'
-        ]);
-        Route::get('admin/produto/listar', [
-            'as' => 'admin.produto.listar',
-            'uses' => 'ProdutoController@listar'
-        ]);
-        Route::get('admin/produto/{id?}/editar', [
-            'as' => 'admin.produto.editar',
-            'uses' => 'ProdutoController@editar'
-        ]);
-        Route::get('admin/produto/form', [
-            'as' => 'admin.produto.criar',    
-            'uses' => 'ProdutoController@criar'
-        ]);
-        Route::get('admin/produto/excluir', [
-            'as' => 'admin.produto.excluir',
-            'uses' => 'ProdutoController@excluir'
-        ]);
-        Route::post('admin/produto/listar', [
-            'as' => 'admin.produto.salvar',
-            'uses' => 'ProdutoController@salvar'
-        ]);
-        Route::patch('admin/produto/atualizar/{id}', [
-            'as' => 'admin.produto.atualizar',
-            'uses' => 'ProdutoController@atualizar'
-        ]);
-        Route::get('admin/produto/{id?}/excluir', [
-            'as' => 'admin.produto.excluir',
-            'uses' => 'ProdutoController@excluir'
-        ]);
-        Route::delete('admin/produto/{id?}/delete', [
-            'as' => 'admin.produto.delete',
-            'uses' => 'ProdutoController@delete'
-        ]);
-    //}
+        
+            Route::get('admin', [
+                'as' => 'admin',
+                'uses' => 'AdminController@getDashboard'
+            ]);
+            Route::get('admin/dashboard', [
+                'as' => 'admin.dashboard',
+                'uses' => 'AdminController@getDashboard'
+            ]);
+            Route::put('admin/pedido/pago/{id}', [
+                'as' => 'admin.pedido.pago',
+                'uses' => 'AdminController@putPedidoPago'
+            ]);
+            Route::put('admin/pedido/finalizado/{id}', [
+                'as' => 'admin.pedido.finalizado',
+                'uses' => 'AdminController@putPedidoFinalizado'
+            ]);
+            Route::get('admin/pedidos/{id?}', [
+                'as' => 'admin.pedidos',
+                'uses' => 'AdminController@getPedidos'
+            ]);
+            Route::get('admin/perfil', [
+                'as' => 'admin.perfil',
+                'uses' => 'AdminController@getPerfil'
+            ]);
+            Route::get('admin/categoria/listar', [
+                'as' => 'admin.categoria.listar',
+                'uses' => 'CategoriaController@listar'
+            ]);
+            Route::get('admin/categoria/{id?}/editar', [
+                'as' => 'admin.categoria.editar',
+                'uses' => 'CategoriaController@editar'
+            ]);
+            Route::get('admin/categoria/form', [
+                'as' => 'admin.categoria.criar',    
+                'uses' => 'CategoriaController@criar'
+            ]);
+            Route::get('admin/categoria/excluir', [
+                'as' => 'admin.categoria.excluir',
+                'uses' => 'CategoriaController@excluir'
+            ]);
+            Route::post('admin/categoria/listar', [
+                'as' => 'admin.categoria.salvar',
+                'uses' => 'CategoriaController@salvar'
+            ]);
+            Route::patch('admin/categoria/atualizar/{id}', [
+                'as' => 'admin.categoria.atualizar',
+                'uses' => 'CategoriaController@atualizar'
+            ]);
+            Route::get('admin/categoria/{id?}/excluir', [
+                'as' => 'admin.categoria.excluir',
+                'uses' => 'CategoriaController@excluir'
+            ]);
+            Route::delete('admin/categoria/{id?}/delete', [
+                'as' => 'admin.categoria.delete',
+                'uses' => 'CategoriaController@delete'
+            ]);
+            Route::get('admin/marca/listar', [
+                'as' => 'admin.marca.listar',
+                'uses' => 'MarcaController@listar'
+            ]);
+            Route::get('admin/marca/{id?}/editar', [
+                'as' => 'admin.marca.editar',
+                'uses' => 'MarcaController@editar'
+            ]);
+            Route::get('admin/marca/form', [
+                'as' => 'admin.marca.criar',    
+                'uses' => 'MarcaController@criar'
+            ]);
+            Route::get('admin/marca/excluir', [
+                'as' => 'admin.marca.excluir',
+                'uses' => 'MarcaController@excluir'
+            ]);
+            Route::post('admin/marca/listar', [
+                'as' => 'admin.marca.salvar',
+                'uses' => 'MarcaController@salvar'
+            ]);
+            Route::patch('admin/marca/atualizar/{id}', [
+                'as' => 'admin.marca.atualizar',
+                'uses' => 'MarcaController@atualizar'
+            ]);
+            Route::get('admin/marca/{id?}/excluir', [
+                'as' => 'admin.marca.excluir',
+                'uses' => 'MarcaController@excluir'
+            ]);
+            Route::delete('admin/marca/{id?}/delete', [
+                'as' => 'admin.marca.delete',
+                'uses' => 'MarcaController@delete'
+            ]);
+            Route::get('admin/produto/listar', [
+                'as' => 'admin.produto.listar',
+                'uses' => 'ProdutoController@listar'
+            ]);
+            Route::get('admin/produto/{id?}/editar', [
+                'as' => 'admin.produto.editar',
+                'uses' => 'ProdutoController@editar'
+            ]);
+            Route::get('admin/produto/form', [
+                'as' => 'admin.produto.criar',    
+                'uses' => 'ProdutoController@criar'
+            ]);
+            Route::get('admin/produto/excluir', [
+                'as' => 'admin.produto.excluir',
+                'uses' => 'ProdutoController@excluir'
+            ]);
+            Route::post('admin/produto/listar', [
+                'as' => 'admin.produto.salvar',
+                'uses' => 'ProdutoController@salvar'
+            ]);
+            Route::patch('admin/produto/atualizar/{id}', [
+                'as' => 'admin.produto.atualizar',
+                'uses' => 'ProdutoController@atualizar'
+            ]);
+            Route::get('admin/produto/{id?}/excluir', [
+                'as' => 'admin.produto.excluir',
+                'uses' => 'ProdutoController@excluir'
+            ]);
+            Route::delete('admin/produto/{id?}/delete', [
+                'as' => 'admin.produto.delete',
+                'uses' => 'ProdutoController@delete'
+            ]);
 });
 
 
