@@ -16,9 +16,9 @@
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <link href="{{asset('bootstrap/css/ie10-viewport-bug-workaround.css')}}" rel="stylesheet">
-
+        {!! HTML::style('bootstrap/css/assets/css/style.css') !!}
         <!-- Custom styles for this template -->
-        <link href="justified-nav.css" rel="stylesheet">
+        <link href="{{asset('bootstrap/css/nav-justified.css')}}" rel="stylesheet">
 
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -38,6 +38,7 @@
             @include('layouts.frente-cabecalho')
             
             <!-- Example row of columns -->
+            <br><br>
             <div class="row">
                 <div class="col-lg-2">
                     <h3>Cliente</h3>
@@ -90,6 +91,6 @@
 
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="{{asset('bootstrap/assets/js/ie10-viewport-bug-workaround.js')}}"></script>
+        <script src="{{asset('bootstrap/js/ie10-viewport-bug-workaround.js')}}"></script>
     </body>
 </html>

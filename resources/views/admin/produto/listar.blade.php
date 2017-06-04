@@ -24,24 +24,23 @@
 		            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Novo Produto 
 		        </a>
 		    </caption>
+		    	<tr style="text-align: center">
 		            <th>id</th>
 		            <th>Imagem</th>
 		            <th>Nome</th>
 		            <th>Quantidade</th>
 		            <th>Marca</th>
 		            <th>Categoria</th>
-
-		            <th>Preço Venda</th>
-		            <th>Ações</th>
-		            <th></th>
+		            <th>Valor</th>
+		            <th>Editar</th>
+		            <th>Excluir</th>
 		        </tr>
 		    </thead>
 		    <tbody>
 		    @foreach($produtos as $prod)
-		    <tr>
+		    <tr style="text-align: center">
 		        <td>{{$prod->id}}</td>
-		        <td>
-		        	<img src="{{route('imagem.file',$prod->imagem_nome)}}" alt="{{$prod->imagem_nome}}" style="width:100px;" > </td>
+		        <td><img src="{{route('imagem.file',$prod->imagem_nome)}}" width="100" height="100" alt="{{$prod->imagem_nome}}" ></td>
 		        <td>{{$prod->nome}}</td>
 		        <td>{{$prod->qtde_estoque}}</td>
 		        <td>{{$prod->marca->nome}}</td>

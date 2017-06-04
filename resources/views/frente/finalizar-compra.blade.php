@@ -21,7 +21,7 @@
 
         <tr>
             <td>
-                <img src="{{route('imagem.file',$item->produto->imagem_nome)}}" alt="{{$item->produto->imagem_nome}}" style="width:70px;" >
+                <img src="{{route('imagem.file',$item->produto->imagem_nome)}}" alt="{{$item->produto->imagem_nome}}" data-lightbox="roadtrip" style="width:70px;" >
             </td>
             <td>
                 <a href="{{route('produto.detalhes', $item->produto->id)}}">
@@ -34,9 +34,11 @@
             <td class="text-right">
                 {{'R$' .number_format($item->produto->preco_venda * $item->qtde, 2, ',', '.')}}
             </td>
-            <td>
+            <td id="teste">
+                
                 Avaliar Produto {!! Form::selectRange('number', 1, 10, null, array('class' => 'avaliado')); !!}
-                <button type="button" data-id='{{ $item->produto->id }}' class='btn btn-success btn-sm btn-avalie'>Avalie</button>
+                <button type="button" data-id='{{ $item->produto->id }}' class='btn btn-success btn-xs btn-avalie'>Avalie</button>
+               
                
                 <!-- avaliar por botão Avalie ou apos clicar no botão finalizar compra -->
             </td>
@@ -62,7 +64,7 @@
                 Erro ao conectar com PagSeguro, por favor tente novamente em alguns minutos!
             </div>
             @endif
-            <div class="col-md-12 col-sm-12 col-xs-12"><div id="alerta" class="alert alert-success pull-left" ></div></div>
+            <div class="col-md-12 col-sm-12 col-xs-12"><div id="alerta" class="alert alert-success pull-right" ></div></div>
             @endif
         </td>
     </tr>
@@ -77,9 +79,9 @@ $(function() {
         $('#alerta').hide();
         $('.btn-avalie').on('click',function(evt){
             evt.preventDefatult;
-            var ava = $(".avaliado option:selected").val();
-            
+            var avaliacao = $(".avaliado option:selected").val();            
             var id_produto = $(this).data('id');
+            var elementToHide = $(this);
             //console.log($(this).data('id'));
             //console.log(ava);
             //var dados = id_produto;
@@ -88,13 +90,13 @@ $(function() {
             $.ajax({
                 type: "POST",
                 url: '{{route("carrinho.avaliar")}}',
-                data: {id_produto: id_produto, ava: ava},
-                //colocar modal de "Produto Avaliado" no lugar do alert
+                data: {id_produto: id_produto, avaliacao: avaliacao},
                 success: function( msg ) {
-                  //$("#alerta").hide();
+                  elementToHide.hide();  
+                  $("#alerta").hide();
                   //$("#alerta").fadeIn().html("Avaliado com sucesso");
-                    $("#alerta").html("Avaliado com sucesso").show().fadeOut(4000);
-                }
+                    $("#alerta").html("Avaliado com sucesso").show().fadeOut(3000);
+                },
             });
             
         });

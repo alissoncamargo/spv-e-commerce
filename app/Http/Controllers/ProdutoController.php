@@ -34,6 +34,7 @@ class ProdutoController extends Controller {
     }
     function listar() {
         $models['produtos'] = Produto::orderBy('nome')->paginate(20);
+            //dd($models);
             return view('admin.produto.listar', $models);
         }
     
@@ -45,8 +46,6 @@ class ProdutoController extends Controller {
     
     function salvar(ProdutoFormRequest $request) { 
         $produto = new Produto();
-        //$imagem = \Shoppvel\Controllers\ImagemController::getImagemFile();
-        //$produto = $imagem;
         $produto->create($request->all());
 
         \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
@@ -71,8 +70,8 @@ class ProdutoController extends Controller {
            ->withInput();
        }
 
-   }
-   function excluir($id) {
+    }
+    function excluir($id) {
         $models['produto'] = Produto::find($id);
             return view('admin.produto.excluir', $models);
         }
@@ -81,6 +80,6 @@ class ProdutoController extends Controller {
         $models['produto'] = Produto::find($id)->delete();
         \Session::flash('mensagens-sucesso', 'Excluido com Sucesso');
             return redirect()->action('ProdutoController@listar');
-        }
+    }
 
 }

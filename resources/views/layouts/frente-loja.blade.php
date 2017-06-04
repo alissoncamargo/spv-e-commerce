@@ -13,16 +13,16 @@
 
         <!-- Bootstrap core CSS -->
         <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
+        {!! HTML::style('bootstrap/css/assets/css/style.css') !!}
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         
         <!-- Custom styles for this template -->
         <link href="{{asset('bootstrap/css/nav-justified.css')}}" rel="stylesheet">
-
+        <link href="{{asset('bootstrap/css/lightbox.css')}}" rel="stylesheet">
+        <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
         
-        <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
         <!--<script src="{{asset('bootstrap/js/ie10-viewport-bug-workaround.js')}}"></script>-->
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -37,7 +37,6 @@
         <div class="container">
 
             @include('layouts.frente-cabecalho')
-            
             <!-- Example row of columns -->
             <div class="row">
                 <div class="col-lg-2 ">
@@ -71,5 +70,6 @@
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="{{asset('bootstrap/js/ie10-viewport-bug-workaround.js')}}"></script>
+        <script src="{{asset('bootstrap/js/lightbox.js')}}"></script>
     </body>
 </html>

@@ -9,7 +9,8 @@
 @foreach ($categoria->produtos as $produto)
 <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-        <img src="{{route('imagem.file',$produto->imagem_nome)}}" >
+        <!-- atributo data-lightbox para o plugin lightbox -->
+        <img src="{{route('imagem.file',$produto->imagem_nome)}}" data-lightbox="roadtrip">
         <div class="caption">
             <h3>{{$produto->nome}}</h3>
             <h4 class="text-muted">{{$produto->marca->nome}}</h4>

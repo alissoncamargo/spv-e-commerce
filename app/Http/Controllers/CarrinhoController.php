@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Shoppvel\Http\Requests;
 use Shoppvel\Models\Carrinho;
 use Shoppvel\Models\Produto;
-//use Shoppvel\Controllers\ClienteController;
 use Illuminate\Support\Facades\Auth;
 use laravel\pagseguro\Config\Config;
 use laravel\pagseguro\Credentials\Credentials;
@@ -133,23 +132,15 @@ class CarrinhoController extends Controller {
 
     public function Avaliar(Request $request){
 
-        $produto = Produto::findOrFail($request->get('id_produto'));
-        /*
-        $produto->avaliacao_qtde += $request->get('ava');
+        $idProduto = $request->get('id_produto');
+        $avaliacao = $request->get('avaliacao');
+
+        $produto = Produto::findOrFail($idProduto);
+        $produto->avaliacao_qtde += $avaliacao;
         $produto->avaliacao_total++;
+        //$itemVenda->produto->avaliacao_qtde--;
         $produto->save();
-        return 'ok';*/
-        if($produto->avaliacao_qtde = Produto::find('avaliacao_qtde') == ''){
-            $produto->avaliacao_qtde += $request->get('ava');
-            $produto->avaliacao_total++;
-            $produto->avaliacao_qtde--;
-            $produto->save();
-        }else{
-            $produto->avaliacao_qtde += $request->get('ava');
-            $produto->avaliacao_qtde--;
-            $produto->avaliacao_total++;
-            $produto->update();
-        }
+        $this->carrinho->setProductAvaliate($idProduto);
     }
 
     function calcFrete(Request $request){

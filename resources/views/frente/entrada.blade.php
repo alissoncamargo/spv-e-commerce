@@ -11,10 +11,10 @@
     <div class="col-sm-6 col-md-4">
         <div class="panel panel-primary">
             <div class="thumbnail">
-                <img src="{{route('imagem.file',$produto->imagem_nome)}}" alt="{{$produto->imagem_nome}}" >
+                <img src="{{route('imagem.file',$produto->imagem_nome)}}" alt="{{$produto->imagem_nome}}" data-lightbox="roadtrip">
                 <div class="caption">
-                    <div  class=""><h3>{{$produto->nome}}</h3></div>
-                    <h4 class="" class="text-muted">{{$produto->marca->nome}}</h4>
+                    <div><h3>{{$produto->nome}}</h3></div>
+                    <h4 class="text-muted">{{$produto->marca->nome}}</h4>
                     <p>{{str_limit($produto->descricao,100)}}</p>
                     <p><a href="{{route('produto.detalhes', $produto->id)}}" class="btn btn-primary" role="button">Detalhes</a></p>
                 </div>

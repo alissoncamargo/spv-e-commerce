@@ -26,7 +26,7 @@
 
         <tr>
             <td>
-                <img src="{{route('imagem.file',$item->produto->imagem_nome)}}" alt="{{$item->produto->imagem_nome}}" style="width:70px;" >
+                <img src="{{route('imagem.file',$item->produto->imagem_nome)}}" alt="{{$item->produto->imagem_nome}}" data-lightbox="roadtrip" style="width:70px;" >
             </td>
             <td>
                 <a href="{{route('produto.detalhes', $item->produto->id)}}">
@@ -79,10 +79,6 @@
                 @endif
             </div>
             </td>
-
-            <td colspan="4" class="text-right">
-                Finalizar compra
-            </td>
             <td>
                 @if (Auth::guest())
                     <a href="{{route('carrinho.finalizar-compra')}}"
@@ -92,7 +88,7 @@
                 @else
                     <a href="{{route('carrinho.finalizar-compra')}}"
                         class="btn btn-success pull-right">
-                           Pagar
+                           Finalizar Compra
                     </a>
                 @endif
             </td>

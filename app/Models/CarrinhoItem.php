@@ -13,4 +13,5 @@ class CarrinhoItem {
     public $produto;
     public $quantidade;
     public $valor;
+    public $avaliado;
 }

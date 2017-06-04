@@ -30,6 +30,10 @@ class Carrinho {
         session()->save();
     }
     
+    public function setProductAvaliate($idProduto){
+        //TODO implementation of product avaliate
+    }
+
     public function add($id, $qtde = 1) {
         $p = Produto::find($id);
         
@@ -41,6 +45,7 @@ class Carrinho {
         $item->produto = $p;
         $item->qtde = $qtde;
         $item->valor = 1 * $p->preco_venda;
+        $item->avaliado = false;
         
         $this->addItem($item);
 
