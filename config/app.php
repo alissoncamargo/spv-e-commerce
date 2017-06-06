@@ -141,6 +141,7 @@ return [
         KennedyTedesco\Validation\ValidationServiceProvider::class,
         laravel\pagseguro\Platform\Laravel5\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
     ],
     /*
       |--------------------------------------------------------------------------
@@ -189,7 +190,8 @@ return [
         'PagSeguro' => laravel\pagseguro\Platform\Laravel5\PagSeguro::class,
         'Form' => Collective\Html\FormFacade::class,
         'HTML' => Collective\Html\HtmlFacade::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class
 
     ],
 ];

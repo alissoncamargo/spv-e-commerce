@@ -37,7 +37,7 @@
 
             @include('layouts.admin-cabecalho')
             <!-- Example row of columns -->
-            <div class="row">
+            <div class="row" style="padding-top: 40px;">
                 <div class="col-lg-2">
                     <h3>Administrador</h3>
                     <ul class="list-group">

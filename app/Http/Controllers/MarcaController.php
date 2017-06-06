@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Shoppvel\Http\Requests;
 use Shoppvel\Models\Marca;
+use Shoppvel\Models\Produto;
 use Shoppvel\Http\Requests\MarcaFormRequest;
 
 class MarcaController extends Controller
@@ -27,8 +28,8 @@ class MarcaController extends Controller
     	$marca->create($request->all());
         //\Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
         $models['marcas'] = Marca::all();
-            return view('admin.marca.listar', $models);
-        }
+        return view('admin.marca.listar', $models);
+    }
     
     function editar($id) {
         $models['marca'] = Marca::find($id);
@@ -47,12 +48,19 @@ class MarcaController extends Controller
            ->withInput();
        }
 
-   }
-   function excluir($id) {
-        $models['marca'] = Marca::find($id);
-            return view('admin.marca.excluir', $models);
-        }
-    
+    }
+    function excluir($id) {
+      $models['marca'] = Marca::find($id);
+      $produtos = Produto::where('marca_id', $id)->get();
+      if(Produto::where('marca_id', $id)->get() == ''){
+      //dd($produto);
+        return view('admin.marca.excluir', $models, $produtos);
+      }else{
+        return redirect()->back()
+           ->with('mensagens-erro', 'Erro!!!')
+           ->withInput();
+      }
+    }  
     function delete($id) {
         $models['marca'] = Marca::find($id)->delete();
         \Session::flash('mensagens-sucesso', 'Excluido com Sucesso');

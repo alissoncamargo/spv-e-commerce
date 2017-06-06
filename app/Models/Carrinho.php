@@ -4,6 +4,7 @@ namespace Shoppvel\Models;
 
 use Shoppvel\Models\Produto;
 use Shoppvel\Models\CarrinhoItem;
+use Shoppvel\Models\VendaItem;
 use \Illuminate\Support\Collection;
 
 /**
@@ -32,6 +33,10 @@ class Carrinho {
     
     public function setProductAvaliate($idProduto){
         //TODO implementation of product avaliate
+        /*$avaliado = VendaItem::find('id');
+        $avaliado = new VendaItem();
+        $avaliado = $idProduto;*/
+
     }
 
     public function add($id, $qtde = 1) {

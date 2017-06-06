@@ -30,7 +30,18 @@ Route::post('/pagseguro/notification', [
 
 Route::auth();
 
+Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+
+Route::get('home', array('as' => 'home', 'uses' => function(){
+  return view('home');
+}));
+
 Route::get('/', 'FrenteLojaController@getIndex');
+
+Route::get('admin', function () {
+    return view('admin_template');
+});
 
 Route::get('sobre', [
     'as' => 'sobre',

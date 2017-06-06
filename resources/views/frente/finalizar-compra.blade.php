@@ -36,7 +36,7 @@
             </td>
             <td id="teste">
                 
-                Avaliar Produto {!! Form::selectRange('number', 1, 10, null, array('class' => 'avaliado')); !!}
+                Avaliar Produto {!! Form::selectRange('number', 1, 10, null, array('class' => 'avaliado')) !!}
                 <button type="button" data-id='{{ $item->produto->id }}' class='btn btn-success btn-xs btn-avalie'>Avalie</button>
                
                
@@ -79,7 +79,7 @@ $(function() {
         $('#alerta').hide();
         $('.btn-avalie').on('click',function(evt){
             evt.preventDefatult;
-            var avaliacao = $(".avaliado option:selected").val();            
+            var avaliacao = $(this).prev('select').val();//$(".avaliado option:selected").val();            
             var id_produto = $(this).data('id');
             var elementToHide = $(this);
             //console.log($(this).data('id'));

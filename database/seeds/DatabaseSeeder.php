@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
 		//Model::unguard();
         // $this->call(UsersTableSeeder::class);
 		$this->call(UserSeeder::class);
-		$this->call(CategoriasSeeder::class);
-		$this->call(MarcasSeeder::class);
-		$this->call(ProdutosSeeder::class);
+		//$this->call(CategoriasSeeder::class);
+		//$this->call(MarcasSeeder::class);
+		//$this->call(ProdutosSeeder::class);
 		//Model::reguard();
     }
 }

@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AlterItemVendaAddAvaliado' => $baseDir . '/database/migrations/2016_05_08_223858_alter_item_venda_add_avaliado.php',
+    'AlterUserTableFacebook' => $baseDir . '/database/migrations/2017_06_05_195240_alter_user_table_facebook.php',
     'CategoriasSeeder' => $baseDir . '/database/seeds/CategoriasSeeder.php',
     'CreateCategoriasTable' => $baseDir . '/database/migrations/2016_03_10_234747_create_categorias_table.php',
     'CreateMarcasTable' => $baseDir . '/database/migrations/2016_03_14_003346_create_marcas_table.php',

@@ -12,11 +12,13 @@ class ComposerStaticInit63df7b0b702aac29f1632b90944fd2fa
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'e7223560d890eab89cda23685e711e2c' => __DIR__ . '/..' . '/psy/psysh/src/Psy/functions.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
         '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
-        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'f18cc91337d49233e5754e93f3ed9ec3' => __DIR__ . '/..' . '/laravelcollective/html/src/helpers.php',
     );
 
@@ -71,11 +73,17 @@ class ComposerStaticInit63df7b0b702aac29f1632b90944fd2fa
         ),
         'L' => 
         array (
+            'League\\OAuth1\\' => 14,
             'League\\Flysystem\\' => 17,
+            'Laravel\\Socialite\\' => 18,
         ),
         'K' => 
         array (
             'KennedyTedesco\\Validation\\' => 26,
+        ),
+        'J' => 
+        array (
+            'JeroenNoten\\LaravelAdminLte\\' => 28,
         ),
         'I' => 
         array (
@@ -85,6 +93,8 @@ class ComposerStaticInit63df7b0b702aac29f1632b90944fd2fa
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
         ),
         'F' => 
         array (
@@ -215,13 +225,25 @@ class ComposerStaticInit63df7b0b702aac29f1632b90944fd2fa
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'League\\OAuth1\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/league/oauth1-client/src',
+        ),
         'League\\Flysystem\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/flysystem/src',
         ),
+        'Laravel\\Socialite\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel/socialite/src',
+        ),
         'KennedyTedesco\\Validation\\' => 
         array (
             0 => __DIR__ . '/..' . '/kennedytedesco/validation/src/Validation',
+        ),
+        'JeroenNoten\\LaravelAdminLte\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jeroennoten/laravel-adminlte/src',
         ),
         'Intervention\\Image\\' => 
         array (
@@ -234,6 +256,14 @@ class ComposerStaticInit63df7b0b702aac29f1632b90944fd2fa
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
         'Faker\\' => 
         array (
@@ -309,6 +339,7 @@ class ComposerStaticInit63df7b0b702aac29f1632b90944fd2fa
 
     public static $classMap = array (
         'AlterItemVendaAddAvaliado' => __DIR__ . '/../..' . '/database/migrations/2016_05_08_223858_alter_item_venda_add_avaliado.php',
+        'AlterUserTableFacebook' => __DIR__ . '/../..' . '/database/migrations/2017_06_05_195240_alter_user_table_facebook.php',
         'CategoriasSeeder' => __DIR__ . '/../..' . '/database/seeds/CategoriasSeeder.php',
         'CreateCategoriasTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_10_234747_create_categorias_table.php',
         'CreateMarcasTable' => __DIR__ . '/../..' . '/database/migrations/2016_03_14_003346_create_marcas_table.php',

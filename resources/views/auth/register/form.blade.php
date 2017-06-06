@@ -102,6 +102,9 @@
                         </button>
                     </div>
                 </div>
+                <div>
+                    <a class="btn btn-info" href="auth/facebook" role="button">Logar com Facebook</a>
+                </div>
             </form>
         </div>
     </div>
