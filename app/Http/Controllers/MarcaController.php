@@ -23,7 +23,7 @@ class MarcaController extends Controller
 
         }
     
-    function salvar(MarcaFormRequest $request) {
+    function salvar(Request $request) {
     	$marca = new Marca();
     	$marca->create($request->all());
         //\Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
@@ -50,7 +50,17 @@ class MarcaController extends Controller
 
     }
     function excluir($id) {
-      $models['marca'] = Marca::find($id);
+        $data['marca'] = Marca::find($id);
+       
+        if(count(Produto::where('marca_id', $id)->get()) == 0){
+            //dd($data);
+            return view('admin.marca.excluir', $data); 
+        }
+        else{
+           return \Redirect::back()
+            ->withErrors('Não é possível excluir esta marca, pois ela está associada à um produto.'); 
+        }
+      /*$models['marca'] = Marca::find($id);
       $produtos = Produto::where('marca_id', $id)->get();
       if(Produto::where('marca_id', $id)->get() == ''){
       //dd($produto);
@@ -59,7 +69,7 @@ class MarcaController extends Controller
         return redirect()->back()
            ->with('mensagens-erro', 'Erro!!!')
            ->withInput();
-      }
+      }*/
     }  
     function delete($id) {
         $models['marca'] = Marca::find($id)->delete();

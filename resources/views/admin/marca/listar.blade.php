@@ -33,21 +33,14 @@
 		            <a href="{{ url('admin/marca/'.$marca->id . '/editar') }}" class="btn btn-info btn-sm">
 		                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> editar 
 		            </a>
-		            @if(count($marca->produto) > 0)
-						<a href="{{ url('admin/marca/'.$marca->id = -1 . '/excluir') }}" class="btn btn-danger btn-sm">
-			                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> excluir 
-			            </a>
-			        @else
-			            <a href="{{ url('admin/marca/'.$marca->id . '/excluir') }}" class="btn btn-danger btn-sm">
-			                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> excluir 
-			            </a>
-			        @endif
+		            <a href="{{ url('admin/marca/'.$marca->id . '/excluir') }}" class="btn btn-danger btn-sm">
+		                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> excluir 
+		            </a>
 		        </td>
 		    </tr>
 		    @endforeach
 		    </tbody>
 		</table>
-		<!--Colocar os links para realizar o paginate -->
 		{{$marcas->links()}}
 	</div>
 </div>
