@@ -1,8 +1,7 @@
 <?php
 
 namespace Shoppvel\Http\Controllers\Auth;
-
-use Shoppvel\Models\User;
+use Shoppvel\User;
 use Validator;
 use Socialite;
 use Shoppvel\Http\Controllers\Controller;
@@ -55,7 +54,7 @@ class AuthController extends Controller
         return Validator::make($data, [
             'new_name' => 'required|max:255',
             'new_email' => 'required|email|max:255|unique:users',
-            'cpf' => 'required|unique|cpf:users',
+            'cpf' => 'required|unique:users',
             'endereco' => 'required',
             'new_password' => 'required|confirmed|min:6',
         ]);

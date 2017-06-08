@@ -31,17 +31,19 @@
 		        
 		        <td>
 		            <a href="{{ url('admin/marca/'.$marca->id . '/editar') }}" class="btn btn-info btn-sm">
-		                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> editar 
+		                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Editar 
 		            </a>
 		            <a href="{{ url('admin/marca/'.$marca->id . '/excluir') }}" class="btn btn-danger btn-sm">
-		                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> excluir 
+		                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Excluir 
 		            </a>
 		        </td>
 		    </tr>
 		    @endforeach
 		    </tbody>
 		</table>
-		{{$marcas->links()}}
+		<!--Colocar os links para realizar o paginate -->
+		{{ $marcas->links() }}
+		<!--{{$marcas->links()}}-->
 	</div>
 </div>
 

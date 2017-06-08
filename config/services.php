@@ -36,10 +36,16 @@ return [
     ],
     
     'facebook' => [
-        'client_id' => env('FACEBOOK_CLIENT_ID'),
-        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => env('CALLBACK_URL'),
+        'client_id' => '230816087408913',
+        'client_secret' => 'c0c85e3f308a4bb810c223aa3b72e76e',
+        'redirect' => 'http://localhost:8000/retorno/facebook',
 
+    ],
+
+    'github' => [
+        'client_id' => 'ff227d131748f96a58ce',
+        'client_secret' => 'b32ca11b3a03d186fa3d00a71155cc03d17173d6',
+        'redirect' => 'http://localhost:8000/retorno/github',
     ],
 
 ];

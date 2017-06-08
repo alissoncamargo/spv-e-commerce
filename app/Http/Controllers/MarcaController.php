@@ -23,12 +23,11 @@ class MarcaController extends Controller
 
         }
     
-    function salvar(Request $request) {
+    function salvar(MarcaFormRequest $request) {
     	$marca = new Marca();
     	$marca->create($request->all());
         //\Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
-        $models['marcas'] = Marca::all();
-        return view('admin.marca.listar', $models);
+      return $this->listar();
     }
     
     function editar($id) {

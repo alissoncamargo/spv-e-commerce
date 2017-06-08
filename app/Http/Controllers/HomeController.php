@@ -4,6 +4,7 @@ namespace Shoppvel\Http\Controllers;
 
 use Shoppvel\Http\Requests;
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {

@@ -102,8 +102,11 @@
                         </button>
                     </div>
                 </div>
-                <div>
-                    <a class="btn btn-info" href="auth/facebook" role="button">Logar com Facebook</a>
+                <div class="links">
+                    <a class="btn btn-info" href="{{url('/auth/facebook')}}" role="button">Logar com Facebook</a>
+                </div>
+                <div class="links" style="padding-top: 10px;">
+                    <a class="btn btn-info" href="{{url('/auth/github')}}" role="button">Logar com GitHub</a>
                 </div>
             </form>
         </div>

@@ -30,8 +30,17 @@ Route::post('/pagseguro/notification', [
 
 Route::auth();
 
-Route::get('auth/facebook', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/facebook/callback', 'Auth\AuthController@handleProviderCallback');
+
+//github
+Route::get('/auth/github', 'SocialAuthController@EntrarGitHub');
+
+Route::get('/retorno/github', 'SocialAuthController@RetornoGitHub');
+
+
+//facebook
+Route::get('/auth/facebook', 'SocialAuthController@EntrarFacebook');
+
+Route::get('/retorno/facebook', 'SocialAuthController@RetornoFacebook');
 
 Route::get('home', array('as' => 'home', 'uses' => function(){
   return view('home');

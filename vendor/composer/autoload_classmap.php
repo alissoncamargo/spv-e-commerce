@@ -7,13 +7,14 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AlterItemVendaAddAvaliado' => $baseDir . '/database/migrations/2016_05_08_223858_alter_item_venda_add_avaliado.php',
-    'AlterUserTableFacebook' => $baseDir . '/database/migrations/2017_06_05_195240_alter_user_table_facebook.php',
+    'AlterUserTableFacebook' => $baseDir . '/database/migrations/2017_06_08_030349_alter_user_table_social.php',
+    'AlterUserTableSo' => $baseDir . '/database/migrations/2017_06_08_110235_alter_user_table_so.php',
+    'AlterUserTableSocial' => $baseDir . '/database/migrations/2017_06_08_031231_alter_user_table_social.php',
     'CategoriasSeeder' => $baseDir . '/database/seeds/CategoriasSeeder.php',
     'CreateCategoriasTable' => $baseDir . '/database/migrations/2016_03_10_234747_create_categorias_table.php',
     'CreateMarcasTable' => $baseDir . '/database/migrations/2016_03_14_003346_create_marcas_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateProdutoTable' => $baseDir . '/database/migrations/2016_03_15_002500_create_produto_table.php',
-    'CreateRatingsTable' => $baseDir . '/database/migrations/2017_05_21_130645_create_ratings_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'CreateVendasTable' => $baseDir . '/database/migrations/2016_05_01_212758_create_vendas_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
