@@ -33,9 +33,15 @@ class Decoder extends \Intervention\Image\AbstractDecoder
             case 'image/jpg':
             case 'image/jpeg':
             case 'image/pjpeg':
+<<<<<<< HEAD
                 $core = @imagecreatefromjpeg($path); 
                 if (!$core) { 
                     $core= @imagecreatefromstring(file_get_contents($path)); 
+=======
+                $core = @imagecreatefromjpeg($path);
+                if (!$core) {
+                    $core= @imagecreatefromstring(file_get_contents($path));
+>>>>>>> 5f433a9b27f37e2049274e3ddeb1adf35e56b174
                 }
                 break;
 

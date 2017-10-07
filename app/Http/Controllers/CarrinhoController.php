@@ -12,7 +12,6 @@ use laravel\pagseguro\Credentials\Credentials;
 use laravel\pagseguro\Checkout\Facade\CheckoutFacade;
 
 class CarrinhoController extends Controller {
-
     private $carrinho = null;
 
     function __construct() {
@@ -140,7 +139,7 @@ class CarrinhoController extends Controller {
         $produto->avaliacao_total++;
         //$itemVenda->produto->avaliacao_qtde--;
         $produto->save();
-        $this->carrinho->setProductAvaliate($idProduto);
+        //$this->carrinho->setProductAvaliate($idProduto);
     }
 
     function calcFrete(Request $request){

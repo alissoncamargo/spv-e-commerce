@@ -11,9 +11,10 @@ class Categoria extends Model {
 		'nome',
 		'categoria_id'
 	];
+    //public $timestamps = false;
 
     public function produtos() {
-        return $this->hasMany(Produto::class);
+        return $this->hasMany(Produto::class,"categoria_id","id");
     }
 
 

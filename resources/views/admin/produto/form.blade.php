@@ -15,7 +15,7 @@
 				<h3>Editar Produto {!! $produto->nome !!}</h3>
 				{!! Form::model($produto, ['method'=>'PATCH', 'url'=>'admin/produto/atualizar/'.$produto->id]) !!}
 			@else
-				{!! Form::open(['route' => 'admin.produto.salvar', 'class'=>'form-horizontal', 'style'=>'display']) !!}
+				{!! Form::open(['route' => 'admin.produto.salvar', 'class'=>'form-horizontal', 'style'=>'display'],'image/save',array('files'=>true)) !!}
 			@endif
 
 			        {!! Form::label('categoria_id', 'Categoria', ['class'=>'col-sm-2 form-label']) !!}
@@ -34,10 +34,10 @@
 					{!! Form::input('number', 'qtde_estoque', null, ['class'=>'form-control', '', 'placeholder'=>'Quantidade']) !!}<br>
 
 					{!! Form::label('preco_venda', 'Preço Venda', ['class'=>'col-sm-2 form-label']) !!}
-					{!! Form::input('text', 'preco_venda', null, ['class'=>'form-control', '', 'placeholder'=>'Preço de Venda']) !!}<br>
+					{!! Form::input('number', 'preco_venda', null, ['class'=>'form-control', '', 'placeholder'=>'Preço de Venda']) !!}<br>
 
-					<!--{!! Form::label('destacado', 'Destacado') !!}
-					{!! Form::checkbox('agree') !!}<br><br>-->
+					{!! Form::label('destacado', 'Destacado', ['class'=>'col-sm-2 form-label'])!!}
+					{!! Form::select('destacado', ['1'=>'Sim','0'=>'Não'], null, ['class'=>'form-control']) !!}<br><br><br>
 
 					<div class="col-md-12">{!! Form::label('imagem_nome', 'Imagem', ['class'=>'col-md-12 col-sm-2 form-label']) !!}</div>
 					{!! Form::input('file', 'imagem_nome', null, ['class'=>'col-md-12', '', 'placeholder'=>'Nome da Imagem']) !!}<br><br>

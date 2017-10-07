@@ -9,21 +9,18 @@
         <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
 
-        <title>Shoppvel</title>
+        <title>Lanchonete</title>
 
         <!-- Bootstrap core CSS -->
         <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
+        <link href="{{asset('bootstrap/css/bootstrap.css')}}" rel="stylesheet">
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <link href="{{asset('bootstrap/css/ie10-viewport-bug-workaround.css')}}" rel="stylesheet">
         {!! HTML::style('bootstrap/css/assets/css/style.css') !!}
         <!-- Custom styles for this template -->
         <link href="{{asset('bootstrap/css/nav-justified.css')}}" rel="stylesheet">
-
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-        <script src="{{asset('bootstrap/js/ie-emulation-modes-warning.js')}}"></script>
-
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -91,6 +88,10 @@
 
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
         <script src="{{asset('bootstrap/js/ie10-viewport-bug-workaround.js')}}"></script>
+        <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('bootstrap/js/script.js')}}"></script>
+
     </body>
 </html>

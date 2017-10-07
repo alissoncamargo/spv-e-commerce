@@ -43,7 +43,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 ">
             <div class="panel panel-success">
                 <div class="panel-heading">
                     <h3 class="text-center">Finalizados</h3>

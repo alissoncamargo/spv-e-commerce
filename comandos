@@ -1,0 +1,5 @@
+comand para alterar um valor de um campo
+
+update produtos set destacado = 1 where id=1
+
+

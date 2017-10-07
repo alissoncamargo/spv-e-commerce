@@ -9,7 +9,7 @@
         <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
 
-        <title>Shoppvel</title>
+        <title>Lanchonete</title>
 
         <!-- Bootstrap core CSS -->
         <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -19,7 +19,6 @@
         <!-- Custom styles for this template -->
         <link href="{{asset('bootstrap/css/nav-justified.css')}}" rel="stylesheet">
         <link href="{{asset('bootstrap/css/lightbox.css')}}" rel="stylesheet">
-        <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
         
@@ -58,8 +57,13 @@
                         </ul>
                     </div>
                     <div class="col-lg-10">
+<<<<<<< HEAD
                         @include('layouts.messages')
 
+=======
+                    <br/>
+                        @include('layouts.messages')
+>>>>>>> 5f433a9b27f37e2049274e3ddeb1adf35e56b174
                         @yield('conteudo')
                     </div>
                 </div>
@@ -72,5 +76,9 @@
         <script src="{{asset('bootstrap/js/ie10-viewport-bug-workaround.js')}}"></script>
         <script src="{{asset('bootstrap/js/lightbox.js')}}"></script>
         <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+<<<<<<< HEAD
+=======
+        <script src="{{asset('bootstrap/js/script.js')}}"></script>
+>>>>>>> 5f433a9b27f37e2049274e3ddeb1adf35e56b174
     </body>
 </html>

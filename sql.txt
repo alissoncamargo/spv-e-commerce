@@ -1,0 +1,23 @@
+create table mesa(
+id_mesa SERIAL NOT NULL,
+numero integer NOT NULL,
+id_venda integer NOT NULL,
+FOREIGN KEY(id_venda)REFERENCES vendas(id_venda),
+PRIMARY KEY (id_mesa)
+);
+
+
+
+create table vendas(
+id_venda SERIAL NOT NULL,
+data_venda dqate NOT NULL,
+valor_venda numeric(10,2) NOT NULL,
+pagseguro_transaction_id VARCHAR NOT NULL,
+pago smallint,
+enviado smallint,
+user_id integer,
+created_at timestamp,
+updated_at timestamp,
+PRIMARY KEY(id_venda),
+unique(id_venda)
+);

@@ -14,9 +14,15 @@
     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
         @foreach ($listcategorias as $cat)
         <li>
+<<<<<<< HEAD
+=======
+            <!-- verificação para listar somente as categorias filhas na Subcategoria -->
+            @if($cat->categoria_id != '')
+>>>>>>> 5f433a9b27f37e2049274e3ddeb1adf35e56b174
             <a href="{{route('categoria.listar', $cat->id)}}">
                 {{$cat->nome}}
             </a>
+            @endif
         </li>
         @endforeach
     </ul>

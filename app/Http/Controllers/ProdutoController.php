@@ -46,7 +46,11 @@ class ProdutoController extends Controller {
     
     function salvar(ProdutoFormRequest $request) { 
         $produto = new Produto();
+        //dd($produto);
         $produto->create($request->all());
+        str_replace(',','.',$produto->preco_venda);
+        number_format($produto->preco_venda, 2, ',', '.');
+        //dd($produto);
 
         \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
             return redirect()->action('ProdutoController@listar')->with('mensagens-sucesso', 'Cadastrado com Sucesso!');
@@ -61,6 +65,9 @@ class ProdutoController extends Controller {
     public function atualizar(ProdutoUpdateRequest $request, $id) {
 
         $data = $request->all();
+        $produto= Produto::find($id);
+        str_replace(',','.',$produto->preco_venda);
+        number_format($produto->preco_venda, 2, ',', '.');
 
         if(Produto::find($id)->update($data)){
            return redirect()->action('ProdutoController@listar')->with('mensagens-sucesso', 'Atualizado com Sucesso!');

@@ -15,6 +15,7 @@ class FrenteLojaController extends Controller {
          * chamar em cada acao a lista de categorias para popular aquele menu
          */
         $models['produtos'] = \Shoppvel\Models\Produto::destacado()->get();
+        $models['mesa'] = \Shoppvel\Models\Mesa::where('status',1)->get();
         
         return view('frente.entrada', $models);
     }

@@ -1,6 +1,25 @@
 @extends('layouts.frente-loja')
 
 @section('conteudo')
+
+<!-- TEMPORARIAMENTE -->
+<style>
+.btn-lg{
+   padding: 8px 18px;
+   font-size: 25px;
+   line-height: 1.3333333;
+   border-radius: 5px;
+   margin: 10px;
+   margin-left: 0;
+}
+</style>
+<br/>
+<div class='container'>
+    <h3>Mesas disponíveis</h3>
+    @foreach($mesa as $m)
+        <a  href="{{url('getmesa',$m->id_mesa)}}" class='btn btn-primary btn-lg' >{{$m->numero}}</a>
+    @endforeach
+</div>
 <div class='col-sm-12'>
     <div class="page-header text-muted">
         {{count($produtos)}} produtos em destaque
