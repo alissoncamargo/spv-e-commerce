@@ -25,7 +25,7 @@
 			        {!! Form::select('marca_id', $marcas->lists('nome','id'), null, ['class'=>'form-control', 'placeholder'=>'Marca']) !!}<br>
 
 					{!! Form::label('nome', 'Produto', ['class'=>'col-sm-2 forml-label']) !!}
-					{!! Form::input('text', 'nome', null, ['class'=>'form-control', 'autofocus', 'placeholder'=>'Nome']) !!}<br>
+					{!! Form::input('text', 'nome', null, ['class'=>'form-control', 'placeholder'=>'Nome']) !!}<br>
 
 					{!! Form::label('descricao', 'Descrição', ['class'=>'col-sm-2 form-label']) !!}
 					{!! Form::input('textarea', 'descricao', null, ['class'=>'form-control', '', 'placeholder'=>'Descrição']) !!}<br>

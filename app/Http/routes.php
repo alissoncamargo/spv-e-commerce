@@ -145,6 +145,7 @@ Route::group(['middleware' => ['auth']], function () {
                 'as' => 'admin',
                 'uses' => 'AdminController@getDashboard'
             ]);
+            
             Route::get('admin/dashboard', [
                 'as' => 'admin.dashboard',
                 'uses' => 'AdminController@getDashboard'

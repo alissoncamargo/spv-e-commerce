@@ -36,6 +36,8 @@ This package provides an easy way to quickly set up [AdminLTE](https://almsaeeds
 
 2. Add the service provider to the `providers` in `config/app.php`:
 
+    > Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider
+
     ```php
     JeroenNoten\LaravelAdminLte\ServiceProvider::class,
     ```
@@ -155,7 +157,7 @@ php artisan vendor:publish --provider="JeroenNoten\LaravelAdminLte\ServiceProvid
 
 Now, edit `config/adminlte.php` to configure the title, skin, menu, URLs etc. All configuration options are explained in the comments. However, I want to shed some light on the `menu` configuration.
 
-### 5.1 Menu 
+### 5.1 Menu
 
 You can configure your menu as follows:
 
@@ -214,7 +216,7 @@ Use the `can` option if you want conditionally show the menu item. This integrat
 
 #### Custom Menu Filters
 
-If you need custom filters, you can easily add your own menu filters to this package. This can be useful when you are using a third-party package for authorization (instead of Laravel's `Gate` functionality).  
+If you need custom filters, you can easily add your own menu filters to this package. This can be useful when you are using a third-party package for authorization (instead of Laravel's `Gate` functionality).
 
 For example with Laratrust:
 
@@ -234,10 +236,6 @@ class MyMenuFilter implements FilterInterface
         if (isset($item['permission']) && ! Laratrust::can($item['permission'])) {
             return false;
         }
-        
-        if (isset($item['header'])) {
-            $item = $item['header'];
-        }
 
         return $item;
     }
@@ -252,7 +250,7 @@ And then add to `config/adminlte.php`:
     JeroenNoten\LaravelAdminLte\Menu\Filters\HrefFilter::class,
     JeroenNoten\LaravelAdminLte\Menu\Filters\SubmenuFilter::class,
     JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
-    JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class, // Comment this line out if you want
+    //JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class, Comment this line out
     MyApp\MyMenuFilter::class,
 ]
 ```
@@ -283,7 +281,7 @@ class AppServiceProvider extends ServiceProvider
             ]);
         });
     }
-    
+
 }
 ```
 The configuration options are the same as in the static configuration files.
