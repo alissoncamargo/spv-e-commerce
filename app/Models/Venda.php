@@ -14,6 +14,7 @@ class Venda extends Model {
 
     private $pagseguro = null;
     protected $dates = ['data_venda'];
+    protected $primaryKey = 'id_venda';
 
     private function initPagSeguro() {
         if ($this->pagseguro == null) {

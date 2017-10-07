@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Shoppvel- e commerce</a>
+            <a class="navbar-brand" href="#">Lanchonete</a>
         </div>
         {!! Form::open(array('route' => 'produto.buscar', 'class'=>'navbar-form navbar-right')) !!} 
         <div class="form-group">
@@ -24,17 +24,21 @@
           <ul class="nav navbar-nav">
                 <li><a href="{{url('/')}}">Home</a></li>
                 <li><a href="{{route('categoria.listar')}}">Categorias</a></li>
+                @if((Route::getCurrentRoute()->getPath()) == 'getmesa/{id}')
+                <li><a data-toggle="modal" data-target="#carrinho_id">Carrinho</a></li>
+                @else
                 <li><a href="{{route('carrinho.listar')}}">Carrinho</a></li>
+                @endif
                 <li><a href="{{route('sobre')}}">Sobre</a></li>            
 
                 @if (Auth::guest())
-                <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/login') }}">Login</a></li>
                 @else
-                <li class="small">
-                    <a href="{{route('cliente.dashboard')}}">
-                        {{ Auth::user()->name }}
-                    </a>
-                </li>
+                    <li class="small">
+                        <a href="{{route('cliente.dashboard')}}">
+                            {{ Auth::user()->name }}
+                        </a>
+                    </li>
                 <li>
                     <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </li>

@@ -9,7 +9,7 @@
         <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
 
-        <title>Shoppvel</title>
+        <title>Lanchonete</title>
 
         <!-- Bootstrap core CSS -->
         <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -19,7 +19,6 @@
         <!-- Custom styles for this template -->
         <link href="{{asset('bootstrap/css/nav-justified.css')}}" rel="stylesheet">
         <link href="{{asset('bootstrap/css/lightbox.css')}}" rel="stylesheet">
-        <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
         
@@ -38,35 +37,16 @@
 
             @include('layouts.frente-cabecalho')
             <!-- Example row of columns -->
-            <div class="row">
-                <div class="col-lg-2 ">
-                    <h3>Categorias</h3>
-                    <ul class="list-group">
-                        @foreach ($listcategorias as $cat)
-                        @if (is_null($cat->categoria_id))
-                        <li class="list-group-item">
-                            <a href="{{route('categoria.listar', $cat->id)}}">
-                                {{$cat->nome}}
-                            </a>
-                        </li>
-                        @endif
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="col-lg-10">
-                    @include('layouts.messages')
-
-                    @yield('conteudo')
-                </div>
-            </div>
-            <!--<div class="row">
-                <div class="col-lg-2 ">
-                    <div class="dropdown">
-                        <button class="btn btn-default btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <strong>Categorias</strong> <span class="glyphicon glyphicon-menu-down"></span></button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <div class="row">
+                    <div class="col-lg-2 ">
+                        <h3>Categoria</h3>
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu1"    data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Categoria
+                                <span class="caret"></span>
+                            </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             @foreach ($listcategorias as $cat)
-                            @if (is_null($cat->categoria_id))
+                            @if (is_null($cat->categoria_id) && $cat->categoria_id < 1)
                             <li>
                                 <a href="{{route('categoria.listar', $cat->id)}}">
                                     {{$cat->nome}}
@@ -76,26 +56,21 @@
                             @endforeach
                         </ul>
                     </div>
+                    <div class="col-lg-10">
+                    <br/>
+                        @include('layouts.messages')
+                        @yield('conteudo')
+                    </div>
                 </div>
-                <div class="col-lg-10">
-                    @include('layouts.messages')
-
-                    @yield('conteudo')
-                </div>
-            </div>-->
-
-
-            <!-- Site footer -->
-            <footer class="footer">
-                <p>&copy; 2016 Ademir Mazer Junior. @nunomazer - ademir.mazer.jr@gmail.com</p>
-            </footer>
 
         </div> <!-- /container -->
 
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
         <script src="{{asset('bootstrap/js/ie10-viewport-bug-workaround.js')}}"></script>
         <script src="{{asset('bootstrap/js/lightbox.js')}}"></script>
-        <!-- <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>-->
+        <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('bootstrap/js/script.js')}}"></script>
     </body>
 </html>

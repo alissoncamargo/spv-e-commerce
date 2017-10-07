@@ -69,6 +69,7 @@
         </td>
     </tr>
 </table>
+<script src="{{asset('bootstrap/js/jquery.min.js')}}"></script>
 <script type="text/javascript">
 $(function() {
     $.ajaxSetup({

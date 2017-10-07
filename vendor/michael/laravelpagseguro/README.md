@@ -1,4 +1,4 @@
-## Laravel PagSeguro - 1.0.2
+## Laravel PagSeguro - 1.0.4
 
 [![Build Status](https://travis-ci.org/michaeldouglas/laravel-pagseguro.svg?branch=master)](https://travis-ci.org/michaeldouglas/laravel-pagseguro)
 [![Total Downloads](https://poser.pugx.org/michael/laravelpagseguro/downloads)](https://packagist.org/packages/michael/laravelpagseguro)
@@ -27,6 +27,8 @@ Abra o arquivo `composer.json` e insira a seguinte instrução:
     "require": {
         "michael/laravelpagseguro": "dev-master"
     }
+
+**Observação**: Para a versão 5.1 do laravel ou abaixo especifique a versão **0.4.1** ao invés de utilizar **dev-master**
 
 Após inserir no require o `Laravel PagSeguro`, você deverá executar o comando:
 

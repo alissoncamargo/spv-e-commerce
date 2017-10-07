@@ -3,7 +3,6 @@
 namespace Shoppvel\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Shoppvel\Http\Requests;
 use Shoppvel\Models\Marca;
 use Shoppvel\Models\Produto;

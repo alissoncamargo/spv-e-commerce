@@ -145,6 +145,7 @@ Route::group(['middleware' => ['auth']], function () {
                 'as' => 'admin',
                 'uses' => 'AdminController@getDashboard'
             ]);
+            
             Route::get('admin/dashboard', [
                 'as' => 'admin.dashboard',
                 'uses' => 'AdminController@getDashboard'
@@ -261,7 +262,98 @@ Route::group(['middleware' => ['auth']], function () {
                 'as' => 'admin.produto.delete',
                 'uses' => 'ProdutoController@delete'
             ]);
+            /////Mesas//
+             Route::get('admin/mesa/listar', [
+                'as' => 'admin.mesa.listar',
+                'uses' => 'MesaController@listar'
+            ]);
+            Route::get('admin/mesa/{id?}/editar', [
+                'as' => 'admin.mesa.editar',
+                'uses' => 'MesaController@editar'
+            ]);
+            Route::get('admin/mesa/form', [
+                'as' => 'admin.mesa.criar',    
+                'uses' => 'MesaController@mesa_form'
+            ]);
+            Route::get('admin/mesa/excluir', [
+                'as' => 'admin.mesa.excluir',
+                'uses' => 'MesaController@excluir'
+            ]);
+            Route::post('admin/mesa/listar', [
+                'as' => 'admin.mesa.salvar',
+                'uses' => 'MesaController@salvar'
+            ]);
+            Route::patch('admin/mesa/atualizar/{id}', [
+                'as' => 'admin.mesa.atualizar',
+                'uses' => 'MesaController@atualizar'
+            ]);
+            Route::get('admin/mesa/{id?}/excluir', [
+                'as' => 'admin.mesa.excluir',
+                'uses' => 'MesaController@excluir'
+            ]);
+            Route::delete('admin/mesa/{id?}/delete', [
+                'as' => 'admin.mesa.delete',
+                'uses' => 'MesaController@delete'
+            ]);
 });
 
+Route::any('login_teste','LoginController@login_form');
+Route::get('logout_teste_cozinha','LoginController@logout');
+////////Rotas do usuario de cozinha
+Route::group(['middleware'=>'Shoppvel\Http\Middleware\cozinha'], function(){
+    Route::get('cozinha_dashboard','CozinhaController@dashboard');
+    Route::get('pedidos_pendentes','CozinhaController@getPendentes');
+    Route::get('pedidos_andamento','CozinhaController@getAndamentos');
+    Route::get('pedidos_pronto','CozinhaController@getProntos');
+    Route::put('pedido_pendente_status/{id}', [
+                'as' => 'status_pendente',
+                'uses' => 'CozinhaController@putAndamento'
+    ]);
+    Route::put('pedido_pronto_status/{id}', [
+                'as' => 'status_pronto',
+                'uses' => 'CozinhaController@putPronto'
+    ]);
+});
+
+
+//temporariamente
+Route::get('getmesa/{id}','MesaController@getMesaId');
+
+
+
+
+
+
+
+
+
+
+
+///////////Rotas usuário
+Route::group(['middleware'=>'Shoppvel\Http\Middleware\cliente'], function(){
+    Route::get('cliente_dashboard','ClienteController@dashboard');
+});
+
+///////////////////////////////
+Route::any('mesa', [
+                'as' => 'admin.mesa',
+                'uses' => 'MesaController@mesa_form'
+]);
+Route::GET('mesa/produto/{id}', [
+    'as' => 'mesa.produto',
+    'uses' => 'MesaController@getProdutoModal'
+
+]);
+
+Route::any('adicionar', [
+    'as' => 'adicionar',
+    'uses' => 'MesaController@Adicionar'
+]);
+Route::any('remover/{id}', [
+    'as' => 'remover',
+    'uses' => 'MesaController@Remover'
+]);
+
+Route::post('cadastrar_mesa','MesaController@criar_mesa');
 
 //Route::get('/home', 'HomeController@index');

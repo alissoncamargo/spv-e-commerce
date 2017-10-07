@@ -9,19 +9,19 @@
         <meta name="author" content="">
         <link rel="icon" href="../../favicon.ico">
 
-        <title>Shoppvel</title>
+        <title>Lanchonete</title>
 
         <!-- Bootstrap core CSS -->
+        <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
         <link href="{{asset('bootstrap/css/bootstrap.css')}}" rel="stylesheet">
-        <link href="{{asset('bootstrap/css/assets/bootstrap.css')}}" rel="stylesheet">
-        {!! HTML::style('bootstrap/css/assets/css/style.css') !!}
+        <link href="{{asset('bootstrap/css/assets/css/style.css')}}" rel="stylesheet">
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <link href="{{asset('bootstrap/css/ie10-viewport-bug-workaround.css')}}" rel="stylesheet">
 
         <!-- Custom styles for this template -->
         
-
+        
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
   
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -90,5 +90,6 @@
 
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="{{asset('bootstrap/js/ie10-viewport-bug-workaround.js')}}"></script>
+        <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     </body>
 </html>

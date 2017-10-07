@@ -11,7 +11,7 @@ use Shoppvel\Http\Requests\CategoriaUpdateRequest;
 
 class CategoriaController extends Controller {
 
-    function getCategoria($id = null) {
+    public function getCategoria($id = null) {
         if ($id == null) {
             $models['listcategorias'] = Categoria::all();
             //dd($models['listcategorias']);
@@ -24,45 +24,64 @@ class CategoriaController extends Controller {
         return view('frente.produtos-categoria', $models);
     } 
 
-    function listar() {
-        //$models['listcategorias'] = Categoria::Orderby('nome');
+    public function listar() {
+        $models['listcategorias'] = Categoria::Orderby('nome');
         $models['listcategorias'] = Categoria::paginate(10);
         //dd($models);
             return view('admin.categoria.listar', $models);
         }
     
-    function criar() {
+    public function criar() {
             return view('admin.categoria.form');
 
         }
     
-    function salvar(CategoriaFormRequest $request) {
+    public function salvar(CategoriaFormRequest $request) {
     	$categoria = new Categoria();
-
-    	$categoria->create($request->all());
+        if($_REQUEST['categoria_id']!= ''){
+            $categoria->create($request->all());
         \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
             return redirect()->action('CategoriaController@listar');
+        }else{
+            $categoria->categoria_id=null;
+            $categoria->nome = $_REQUEST['nome'];
+            $categoria->save();
+            \Session::flash('mensagens-sucesso', 'Cadastrado com Sucesso');
+            return redirect()->action('CategoriaController@listar');
         }
+
+    }
+    	
     
-    function editar($id) {
+    public function editar($id) {
         $models['categoria'] = \Shoppvel\Models\Categoria::find($id);
-            return view('admin.categoria.form', $models);
+            if($models['categoria']->categoria_id != ''){
+                return view('admin.categoria.form', $models);
+            }else{
+                $models['categoria']->categoria_id = '';
+                return view('admin.categoria.form', $models);
+            }
         }
 
     public function atualizar(CategoriaUpdateRequest $request, $id) {
-
-        $data = $request->all();
-
-        if(Categoria::find($id)->update($data)){
+        
+        //dd($request);
+        if($_REQUEST['categoria_id']!= ''){
+            $categoria = Categoria::find($id);
+            $categoria->nome = $_REQUEST['nome'];
+            $categoria->categoria_id = $_REQUEST['categoria_id'];
+            $categoria->save();
            return redirect()->action('CategoriaController@listar')->with('mensagens-sucesso', 'Atualizado com Sucesso');
-       } else {
-           return redirect()->back()
-           ->with('mensagens-danger', 'Erro ao atualizar a categoria')
-           ->withInput();
-       }
+        }else {
+            $categoria = Categoria::find($id);
+            $categoria->categoria_id = null;
+            $categoria->nome = $_REQUEST['nome'];
+            $categoria->save();
+            return redirect()->action('CategoriaController@listar')->with('mensagens-sucesso', 'Atualizado com Sucesso');
+        }
 
-   }
-   function excluir($id) {
+    }
+    public function excluir($id) {
         $models['categoria'] = \Shoppvel\Models\Categoria::find($id);
         if($id != -1){
             return view('admin.categoria.excluir', $models);
@@ -71,7 +90,7 @@ class CategoriaController extends Controller {
             
         }
     
-    function delete($id) {
+    public function delete($id) {
         $models['categoria'] = \Shoppvel\Models\Categoria::find($id)->delete();
         \Session::flash('mensagens-sucesso', 'Excluido com Sucesso');
             return redirect()->action('CategoriaController@listar');

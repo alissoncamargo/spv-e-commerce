@@ -26,7 +26,7 @@ class ProdutoUpdateRequest extends Request
         return [
             'nome' => 'required|min:3',
             'qtde_estoque' => 'required|numeric',
-            'preco_venda' => 'required|numeric',
+            'preco_venda' => 'required',
             'categoria_id' => 'required',
             'marca_id' => 'required',
         ];
